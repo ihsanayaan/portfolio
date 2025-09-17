@@ -62,7 +62,7 @@ const Footer = () => {
         <div className="text-sm text-textMain space-y-2">
           <h3 className="text-lg text-accentLight font-semibold mb-2">Let's Connect</h3>
           <p>
-            Frontend Developer passionate about crafting beautiful interfaces using React, Tailwind & UI/UX design.
+            Front-End Developer about beautiful, responsive and user friendly websites using React, Tailwind & UI/UX design.
           </p>
         </div>
       </div>

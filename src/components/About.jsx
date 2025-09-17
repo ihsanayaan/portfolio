@@ -20,7 +20,7 @@ const About = () => {
           transition={{ duration: 0.5 }}
           viewport={{ once: true }}
         >
-          I'm <strong className="text-accentLight">Ihsan Ali</strong>, a passionate Front-End Developer focused on building beautiful, responsive web interfaces using React.js, Tailwind CSS, and modern UI/UX principles.
+          I'm <strong className="text-accentLight">Ihsan Ali</strong> a Front-End Developer focused on building beautiful, responsive and user friendly websites using React.js, Tailwind CSS, and modern UI/UX principles.
         </motion.p>
         {/* Tabs Section */}
         <TabsSection />

@@ -51,7 +51,7 @@ const categories = {
   ],
   Tools: [
     "Git & GitHub", "VS Code", "Figma", "Chrome DevTools",
-    "Postman", "Axios", "Vite"
+    "Axios", "Vite"
   ],
   "Soft Skills": [
     "Teamwork", "Problem-Solving", "Communication", "Adaptability", "Time Management"
