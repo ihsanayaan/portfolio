@@ -14,7 +14,7 @@ const Footer = () => {
   const links = ['home', 'about', 'projects', 'education', 'experience', 'contact'];
 
   return (
-    <footer className="bg-[#0D0D0D] text-textSub border-t border-borderLight px-6 py-12">
+    <footer className="bg-[#0D0D0D] text-textSub border-t border- border-accentLight/50 px-6 py-12">
       <div className="max-w-6xl mx-auto grid md:grid-cols-3 gap-8 text-center md:text-left">
         
         {/* 🔗 Navigation Links */}
@@ -67,7 +67,7 @@ const Footer = () => {
         </div>
       </div>
 
-      <div className="text-center text-sm text-textSub mt-10 border-t border-borderLight pt-6">
+      <div className="text-center text-sm text-textSub mt-10 border-t border- border-accentLight/50 pt-6">
         © {new Date().getFullYear()} Ihsan Ali — All rights reserved.
       </div>
     </footer>

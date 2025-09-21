@@ -71,7 +71,7 @@ const TabsSection = () => {
             onClick={() => setActiveTab(key)}
             className={`px-4 py-2 rounded-soft font-medium border transition-all ${
               activeTab === key
-                ? "bg-[#1A1A1A] text-accentLight border-accentLight shadow-md shadow-accent/20"
+                ? "bg-[#1A1A1A] text-accentLight border-accentLight/50 shadow-md shadow-accent/20"
                 : "bg-[#0F0F0F] text-textSub border-borderLight hover:bg-[#1C1C1C]/50"
             }`}
           >

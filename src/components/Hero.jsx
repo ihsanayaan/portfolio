@@ -9,40 +9,55 @@ const Hero = () => {
       id="home"
       className="relative h-screen flex flex-col justify-center items-center text-center px-6 bg-[#0D0D0D] overflow-hidden"
     >
-      {/* 🔵 Glow Background */}
-      <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[500px] h-[500px] bg-[#4EC6F1]/10 blur-3xl rounded-full z-0" />
+      {/* 🌈 Multi-Layered Animated Glow Background */}
+      <motion.div
+        animate={{ scale: [1, 1.2, 1], opacity: [0.3, 0.5, 0.4] }}
+        transition={{ duration: 12, repeat: Infinity, ease: "easeInOut" }}
+        className="absolute top-1/3 left-1/2 -translate-x-1/2 w-[900px] h-[900px] 
+                   bg-gradient-to-r from-[#4EC6F1] via-[#6C63FF] to-[#FF6FD8] 
+                   rounded-full blur-[200px] opacity-30 z-0"
+      />
+      <motion.div
+        animate={{ scale: [1, 1.15, 0.9, 1], opacity: [0.2, 0.35, 0.25, 0.3] }}
+        transition={{ duration: 15, repeat: Infinity, ease: "easeInOut" }}
+        className="absolute bottom-[-100px] left-[-100px] w-[600px] h-[600px] 
+                   bg-gradient-to-r from-[#FF6FD8] via-[#6C63FF] to-[#4EC6F1] 
+                   rounded-full blur-[180px] opacity-20 z-0"
+      />
 
-      {/* 🔤 Main Content */}
+      {/* 🔤 Main Content (Glassmorphism card) */}
       <motion.div
         initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.7 }}
         viewport={{ once: true }}
-        className="relative z-10"
+        className="relative z-10 p-8 rounded-2xl bg-white/5 backdrop-blur-md border border-accentLight/50 shadow-xl"
       >
-       {/* 🖼️ Profile Image with Animated Glow Ring */}
-<div className="relative inline-block mt-2">
-  {/* 🔵 Outer Animated Glow Ring */}
-  <motion.div
-    animate={{ rotate: 360 }}
-    transition={{ repeat: Infinity, duration: 8, ease: "linear" }}
-    className="absolute -inset-4 rounded-full border-4 border-transparent bg-gradient-to-r from-[#4EC6F1] via-[#6C63FF] to-[#4EC6F1] blur-md opacity-70"
-  />
-
-  {/* 🔵 Static Glow Layer */}
-  <div className="absolute top-0 left-0 w-full h-full rounded-full bg-accentLight/20 blur-2xl z-[-1]" />
-
-  {/* 🖼️ Actual Image */}
-  <motion.img
-    src="/profile.jpg"
-    alt="Ihsan Ali"
-    initial={{ scale: 0.9 }}
-    animate={{ scale: 1 }}
-    transition={{ duration: 0.6, ease: "easeOut" }}
-    whileHover={{ scale: 1.05 }}
-    className="relative w-36 h-36 rounded-full object-cover object-top shadow-lg border-2 border-accentLight mx-auto mb-6 transition-all duration-300"
-  />
-</div>
+        {/* 🖼️ Profile Image with Breathing Animated Gradient Ring */}
+        <div className="relative inline-block mb-6">
+          {/* 🌈 Breathing Gradient Ring */}
+          <motion.div
+            animate={{ rotate: 360, scale: [1, 1.08, 1] }}
+            transition={{
+              repeat: Infinity,
+              duration: 12,
+              ease: "linear",
+            }}
+            className="absolute -inset-4 rounded-full border-4 border-transparent 
+                       bg-gradient-to-r from-[#4EC6F1] via-[#6C63FF] to-[#FF6FD8] 
+                       blur-md opacity-80"
+          />
+          <motion.img
+            src="/profile.jpg"
+            alt="Ihsan Ali"
+            initial={{ scale: 0.9 }}
+            animate={{ scale: 1 }}
+            transition={{ duration: 0.6, ease: "easeOut" }}
+            whileHover={{ scale: 1.05 }}
+            className="relative w-36 h-36 rounded-full object-cover object-top 
+                       shadow-lg border-2 border-accentLight transition-all duration-300"
+          />
+        </div>
 
         {/* 🙋‍♂️ Name */}
         <motion.h1
@@ -50,7 +65,7 @@ const Hero = () => {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, ease: "easeOut", delay: 0.2 }}
           viewport={{ once: true }}
-          className="text-4xl md:text-5xl font-bold text-textMain mb-2"
+          className="text-4xl md:text-5xl font-bold text-white mb-2"
         >
           Hi, I'm <span className="text-accentLight">Ihsan Ali</span>
         </motion.h1>
@@ -61,7 +76,7 @@ const Hero = () => {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, ease: "easeOut", delay: 0.4 }}
           viewport={{ once: true }}
-          className="text-sm md:text-base text-textSub max-w-md mx-auto mb-4"
+          className="text-sm md:text-base text-gray-300 max-w-md mx-auto mb-4"
         >
           I design and develop modern websites that blend clean design, smooth
           interactions and strong functionality helping ideas turn into
@@ -92,34 +107,30 @@ const Hero = () => {
           />
         </motion.h2>
 
-       {/* 📄 Resume Download Button */}
-<motion.div
-  className="mt-4"
-  initial={{ opacity: 0, y: 30, scale: 0.9 }}
-  whileInView={{ opacity: 1, y: 0, scale: 1 }}
-  transition={{ duration: 0.6, ease: "easeOut", delay: 0.8 }}
-  viewport={{ once: true }}
->
-  <motion.a
-    href="/IhsanAli_Resume.pdf"
-    download
-    whileHover={{
-      scale: 1.08,
-      boxShadow: "0px 0px 20px rgba(128,208,255,0.6)",
-    }}
-    whileTap={{ scale: 0.95 }}
-    className="relative inline-flex items-center gap-2 px-6 py-2 rounded-lg 
-               bg-gradient-to-r from-[#4EC6F1] to-[#6C63FF] 
-               text-white font-semibold shadow-lg overflow-hidden"
-  >
-    {/* Shine Effect */}
-    <span className="absolute inset-0 w-[200%] h-full bg-gradient-to-r from-transparent via-white/40 to-transparent 
-                     translate-x-[-100%] hover:translate-x-[100%] transition-transform duration-700 ease-in-out" />
-
-    <FaDownload className="relative z-10" />
-    <span className="relative z-10">Download Resume</span>
-  </motion.a>
-</motion.div>
+        {/* 📄 Resume Download Button */}
+        <motion.div
+          className="mt-4"
+          initial={{ opacity: 0, y: 30, scale: 0.9 }}
+          whileInView={{ opacity: 1, y: 0, scale: 1 }}
+          transition={{ duration: 0.6, ease: "easeOut", delay: 0.8 }}
+          viewport={{ once: true }}
+        >
+          <motion.a
+            href="/IhsanAli_Resume.pdf"
+            download
+            whileHover={{
+              scale: 1.08,
+              boxShadow: "0px 0px 20px rgba(128,208,255,0.6)",
+            }}
+            whileTap={{ scale: 0.95 }}
+            className="relative inline-flex items-center gap-2 px-6 py-2 rounded-lg 
+                       bg-gradient-to-r from-[#4EC6F1] to-[#FF6FD8] 
+                       text-white font-semibold shadow-lg overflow-hidden"
+          >
+            <FaDownload className="relative z-10" />
+            <span className="relative z-10">Download Resume</span>
+          </motion.a>
+        </motion.div>
       </motion.div>
 
       {/* ⬇️ Scroll Down Arrow */}

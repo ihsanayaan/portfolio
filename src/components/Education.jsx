@@ -52,11 +52,11 @@ const Education = () => {
   const closePreview = () => setPreview(null);
 
   return (
-    <section id="education" className="pt-24 scroll-mt-24 bg-bgDarkAlt px-6 py-16 border-t border-borderLight">
+    <section id="education" className="pt-24 scroll-mt-24 bg-bgDarkAlt px-6 py-16 border-t border- border-accentLight/50">
       <div className="max-w-4xl mx-auto space-y-12">
         <SectionHeading title="🎓 Education" />
 
-        <div className="relative border-l border-borderLight ml-4">
+        <div className="relative border-l border- border-accentLight/50 ml-4">
           {educationData.map((edu, index) => (
             <motion.div
               key={index}
@@ -66,7 +66,7 @@ const Education = () => {
               transition={{ duration: 0.5, delay: index * 0.2 }}
               viewport={{ once: true }}
             >
-              <span className="absolute -left-4 top-2 w-8 h-8 rounded-full bg-bgDark border border-accentLight flex items-center justify-center shadow-md animate-pulse">
+              <span className="absolute -left-4 top-2 w-8 h-8 rounded-full bg-bgDark border border-accentLight/50 flex items-center justify-center shadow-md animate-pulse">
                 {edu.icon}
               </span>
 

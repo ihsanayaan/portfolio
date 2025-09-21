@@ -74,12 +74,12 @@ const Experience = () => {
   return (
     <section
       id="experience"
-      className="pt-24 scroll-mt-24 bg-bgDarkAlt px-6 py-16 border-t border-borderLight"
+      className="pt-24 scroll-mt-24 bg-bgDarkAlt px-6 py-16 border-t border- border-accentLight/50"
     >
       <div className="max-w-4xl mx-auto space-y-12">
         <SectionHeading title="💼 Experience" />
 
-        <div className="relative border-l border-borderLight ml-4">
+        <div className="relative border-l border- border-accentLight/50 ml-4">
           {experienceData.map((exp, index) => (
             <motion.div
               key={index}

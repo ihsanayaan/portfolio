@@ -114,7 +114,7 @@ const Projects = () => {
   return (
     <section
       id="projects"
-      className="pt-24 scroll-mt-24 bg-bgDarkAlt px-6 py-16 border-t border-borderLight"
+      className="pt-24 scroll-mt-24 bg-bgDarkAlt px-6 py-16 border-t  border-accentLight/50"
     >
       <div className="max-w-6xl mx-auto text-center space-y-10">
         <motion.h2
@@ -144,7 +144,7 @@ const Projects = () => {
                 scale: 1.02,
                 boxShadow: "0 8px 20px rgba(0,0,0,0.4)",
               }}
-              className="bg-bgDark p-4 rounded-soft border border-borderLight shadow-md transition-all group overflow-hidden"
+              className="bg-bgDark p-4 rounded-soft border  border-accentLight/50 shadow-md transition-all group overflow-hidden"
             >
               {/* 🔥 Image + Overlay */}
               <div className="relative w-full h-40 mb-4 rounded-md overflow-hidden border border-textSub">
