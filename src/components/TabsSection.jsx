@@ -63,23 +63,38 @@ const TabsSection = () => {
 
   return (
     <div className="mt-8">
-      {/* Tab Buttons */}
-      <div className="flex justify-center gap-4 mb-6 flex-wrap">
-        {Object.keys(categories).map((key) => (
-          <button
-            key={key}
-            onClick={() => setActiveTab(key)}
-            className={`px-4 py-2 rounded-soft font-medium border transition-all ${
-              activeTab === key
-                ? "bg-[#1A1A1A] text-accentLight border-accentLight/50 shadow-md shadow-accent/20"
-                : "bg-[#0F0F0F] text-textSub border-borderLight hover:bg-[#1C1C1C]/50"
-            }`}
-          >
-            {key}
-          </button>
-        ))}
-      </div>
-
+   {/* Tab Buttons */}
+<div className="flex justify-center gap-4 mb-6 flex-wrap">
+  {Object.keys(categories).map((key, index) => (
+    <motion.button
+      key={key}
+      onClick={() => setActiveTab(key)}
+      whileHover={{ scale: 1.08 }}
+      whileTap={{ scale: 0.95 }}
+      initial={{ opacity: 0, y: -10 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.3, delay: index * 0.1 }}
+      className={`px-4 py-2 rounded-soft font-medium border transition-all relative overflow-hidden
+        ${
+          activeTab === key
+            ? "bg-[#1A1A1A] text-accentLight border-accentLight/50 shadow-md shadow-accent/20"
+            : "bg-[#0F0F0F] text-textSub border-borderLight hover:bg-[#1C1C1C]/50"
+        }`}
+    >
+      {/* ✨ Active Tab Glow Background */}
+      {activeTab === key && (
+        <motion.span
+          layoutId="activeTabGlow"
+          className="absolute inset-0 bg-gradient-to-r from-[#4EC6F1]/10 via-[#6C63FF]/10 to-[#FF6FD8]/10 rounded-soft"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.4 }}
+        />
+      )}
+      <span className="relative z-10">{key}</span>
+    </motion.button>
+  ))}
+</div>
       {/* Animated Skills List */}
       <motion.ul
         key={activeTab}

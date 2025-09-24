@@ -35,7 +35,6 @@ const Hero = () => {
       >
         {/* 🖼️ Profile Image with Breathing Animated Gradient Ring */}
         <div className="relative inline-block mb-6">
-          {/* 🌈 Breathing Gradient Ring */}
           <motion.div
             animate={{ rotate: 360, scale: [1, 1.08, 1] }}
             transition={{
@@ -67,21 +66,8 @@ const Hero = () => {
           viewport={{ once: true }}
           className="text-4xl md:text-5xl font-bold text-white mb-2"
         >
-          Hi, I'm <span className="text-accentLight">Ihsan Ali</span>
+          Hi, I'm
         </motion.h1>
-
-        {/* ✨ Short Subtitle */}
-        <motion.p
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, ease: "easeOut", delay: 0.4 }}
-          viewport={{ once: true }}
-          className="text-sm md:text-base text-gray-300 max-w-md mx-auto mb-4"
-        >
-          I design and develop modern websites that blend clean design, smooth
-          interactions and strong functionality helping ideas turn into
-          impactful digital experiences.
-        </motion.p>
 
         {/* ✍️ Typewriter Text */}
         <motion.h2
@@ -107,30 +93,93 @@ const Hero = () => {
           />
         </motion.h2>
 
-        {/* 📄 Resume Download Button */}
-        <motion.div
-          className="mt-4"
-          initial={{ opacity: 0, y: 30, scale: 0.9 }}
-          whileInView={{ opacity: 1, y: 0, scale: 1 }}
-          transition={{ duration: 0.6, ease: "easeOut", delay: 0.8 }}
+        {/* ✨ Short Subtitle */}
+        <motion.p
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, ease: "easeOut", delay: 0.4 }}
           viewport={{ once: true }}
+          className="text-sm md:text-base text-gray-300 max-w-md mx-auto mb-4"
         >
-          <motion.a
-            href="/IhsanAli_Resume.pdf"
-            download
-            whileHover={{
-              scale: 1.08,
-              boxShadow: "0px 0px 20px rgba(128,208,255,0.6)",
-            }}
-            whileTap={{ scale: 0.95 }}
-            className="relative inline-flex items-center gap-2 px-6 py-2 rounded-lg 
-                       bg-gradient-to-r from-[#4EC6F1] to-[#FF6FD8] 
-                       text-white font-semibold shadow-lg overflow-hidden"
-          >
-            <FaDownload className="relative z-10" />
-            <span className="relative z-10">Download Resume</span>
-          </motion.a>
-        </motion.div>
+          I design and develop modern websites that blend clean design, smooth
+          interactions and strong functionality helping ideas turn into
+          impactful digital experiences.
+        </motion.p>
+
+        <motion.p 
+          className="mt-3 text-base md:text-lg text-accentLight italic"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 0.5, duration: 0.6 }}
+        >
+          Turning Canva prototypes into fully responsive React + Tailwind apps
+        </motion.p>
+
+       {/* 📄 Resume & Hire Me Buttons Row */}
+<motion.div
+  className="mt-6 flex flex-row gap-4 justify-center flex-wrap"
+  initial={{ opacity: 0, y: 30, scale: 0.9 }}
+  whileInView={{ opacity: 1, y: 0, scale: 1 }}
+  transition={{ duration: 0.6, ease: "easeOut", delay: 0.8 }}
+  viewport={{ once: true }}
+>
+  {/* 📄 Resume Button */}
+  <motion.a
+    href="/IhsanAli_Resume.pdf"
+    download
+    whileHover={{
+      scale: 1.08,
+      boxShadow: "0px 0px 20px rgba(128,208,255,0.6)",
+    }}
+    whileTap={{ scale: 0.95 }}
+    className="relative inline-flex items-center gap-2 px-6 py-2 rounded-lg 
+               bg-gradient-to-r from-[#4EC6F1] to-[#FF6FD8] 
+               text-white font-semibold shadow-lg overflow-hidden group"
+  >
+    {/* 📂 Animated Icon */}
+    <motion.span
+      animate={{ y: [0, -3, 0] }}
+      transition={{ repeat: Infinity, duration: 1.2 }}
+      className="text-lg"
+    >
+      <FaDownload />
+    </motion.span>
+    <span className="relative z-10">Download Resume</span>
+  </motion.a>
+
+  {/* 🚀 Hire Me Button (scrolls to Contact section) */}
+  <Link
+    to="contact"
+    smooth={true}
+    offset={-80}
+    duration={600}
+    className="cursor-pointer"
+  >
+    <motion.div
+      whileHover={{
+        scale: 1.1,
+        boxShadow: "0px 0px 25px rgba(255,111,216,0.7)",
+      }}
+      whileTap={{ scale: 0.95 }}
+      className="relative inline-flex items-center gap-2 px-6 py-2 rounded-lg 
+                 bg-gradient-to-r from-[#FF6FD8] to-[#6C63FF] 
+                 text-white font-semibold shadow-lg overflow-hidden group"
+    >
+      {/* 🤝 Animated Icon */}
+      <motion.span
+        animate={{ y: [0, -3, 0] }}
+        transition={{ repeat: Infinity, duration: 1.2 }}
+        className="text-lg"
+      >
+        🤝
+      </motion.span>
+      <span className="relative z-10">Hire Me</span>
+
+      {/* ✨ Glow Effect */}
+      <span className="absolute inset-0 rounded-lg opacity-0 group-hover:opacity-20 transition duration-500 bg-white"></span>
+    </motion.div>
+  </Link>
+</motion.div>
       </motion.div>
 
       {/* ⬇️ Scroll Down Arrow */}

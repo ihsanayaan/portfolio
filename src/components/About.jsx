@@ -21,7 +21,12 @@ const About = () => {
           viewport={{ once: true }}
         >
           I'm <strong className="text-accentLight">Ihsan Ali</strong> a Front-End Developer focused on building beautiful, responsive and user friendly websites using React.js, Tailwind CSS and modern UI/UX principles.
-        </motion.p>
+          <br /><br />
+          I start by creating high level prototypes in <strong className='text-accentLight'>
+            Canva</strong> to align with client expectation and then trasform those designs into real world, responsive applications using <strong className='text-accentLight'>React.js</strong> and <strong className='text-accentLight'>TailwindCSS</strong>
+            <br /><br />
+            In short: <span className='italic text-accentLight'>I turn Canva prototypes into fully responsive React + Tailwind apps.</span>
+         </motion.p>
         {/* Tabs Section */}
         <TabsSection />
       </div>

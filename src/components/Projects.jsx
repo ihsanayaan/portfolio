@@ -114,9 +114,10 @@ const Projects = () => {
   return (
     <section
       id="projects"
-      className="pt-24 scroll-mt-24 bg-bgDarkAlt px-6 py-16 border-t  border-accentLight/50"
+      className="pt-24 scroll-mt-24 bg-bgDarkAlt px-6 py-16 border-t border-accentLight/50"
     >
       <div className="max-w-6xl mx-auto text-center space-y-10">
+        {/* 🔥 Heading Animation */}
         <motion.h2
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -140,56 +141,99 @@ const Projects = () => {
               key={index}
               variants={cardVariants}
               whileHover={{
-                y: -8,
-                scale: 1.02,
-                boxShadow: "0 8px 20px rgba(0,0,0,0.4)",
+                y: -10,
+                scale: 1.03,
+                boxShadow: "0 12px 30px rgba(0,0,0,0.45)",
               }}
-              className="bg-bgDark p-4 rounded-soft border  border-accentLight/50 shadow-md transition-all group overflow-hidden"
+              className="relative bg-bgDark p-4 rounded-soft border border-accentLight/40 shadow-md transition-all group overflow-hidden"
             >
+              {/* ✨ Hover Glow Border */}
+              <motion.div
+                className="absolute inset-0 rounded-soft border-2 border-transparent group-hover:border-accentLight/40"
+                initial={{ opacity: 0 }}
+                whileHover={{ opacity: 1 }}
+                transition={{ duration: 0.4 }}
+              />
+
               {/* 🔥 Image + Overlay */}
               <div className="relative w-full h-40 mb-4 rounded-md overflow-hidden border border-textSub">
-                <img
+                <motion.img
                   src={project.image}
                   alt={project.title}
-                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                  className="w-full h-full object-cover"
+                  whileHover={{ scale: 1.1 }}
+                  transition={{ duration: 0.6 }}
                 />
                 {/* Gradient Overlay */}
-                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-end justify-center">
+                <motion.div
+                  className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent flex items-end justify-center"
+                  initial={{ opacity: 0 }}
+                  whileHover={{ opacity: 1 }}
+                  transition={{ duration: 0.4 }}
+                >
                   <span className="text-sm text-white font-medium mb-3">
                     {project.title}
                   </span>
-                </div>
+                </motion.div>
               </div>
 
               {/* Title + Description */}
-              <h3 className="text-xl font-semibold text-accentLight mb-2">
+              <motion.h3
+                initial={{ opacity: 0, y: 15 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+                className="text-xl font-semibold text-accentLight mb-2"
+              >
                 {project.title}
-              </h3>
-              <p className="text-sm text-textSub mb-4">
+              </motion.h3>
+
+              <motion.p
+                initial={{ opacity: 0, y: 15 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: index * 0.15 }}
+                className="text-sm text-textSub mb-4"
+              >
                 {project.description}
-              </p>
+              </motion.p>
 
               {/* Buttons */}
               <div className="flex justify-center gap-4 mt-4">
                 {project.demo && (
-                  <a
+                  <motion.a
                     href={project.demo}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="bg-[#1A1A1A] text-accentLight px-4 py-1 rounded-soft border border-accentLight hover:bg-[#222222] hover:shadow-md hover:shadow-accentLight/20 transition duration-300 cursor-pointer"
+                    whileHover={{ scale: 1.08 }}
+                    whileTap={{ scale: 0.95 }}
+                    className="relative bg-[#1A1A1A] text-accentLight px-4 py-1 rounded-soft border border-accentLight overflow-hidden"
                   >
-                    Live Demo
-                  </a>
+                    <span className="relative z-10">Live Demo</span>
+                    {/* Hover Glow Effect */}
+                    <motion.span
+                      className="absolute inset-0 bg-accentLight/10"
+                      initial={{ opacity: 0 }}
+                      whileHover={{ opacity: 1 }}
+                      transition={{ duration: 0.3 }}
+                    />
+                  </motion.a>
                 )}
                 {project.code && (
-                  <a
+                  <motion.a
                     href={project.code}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="bg-[#1A1A1A] text-accentLight px-4 py-1 rounded-soft border border-accentLight hover:bg-[#222222] hover:shadow-md hover:shadow-accentLight/20 transition duration-300 cursor-pointer"
+                    whileHover={{ scale: 1.08 }}
+                    whileTap={{ scale: 0.95 }}
+                    className="relative bg-[#1A1A1A] text-accentLight px-4 py-1 rounded-soft border border-accentLight overflow-hidden"
                   >
-                    GitHub
-                  </a>
+                    <span className="relative z-10">GitHub</span>
+                    <motion.span
+                      className="absolute inset-0 bg-accentLight/10"
+                      initial={{ opacity: 0 }}
+                      whileHover={{ opacity: 1 }}
+                      transition={{ duration: 0.3 }}
+                    />
+                  </motion.a>
                 )}
               </div>
             </motion.div>
