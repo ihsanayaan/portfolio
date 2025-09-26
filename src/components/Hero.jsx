@@ -31,10 +31,10 @@ const Hero = () => {
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.7 }}
         viewport={{ once: true }}
-        className="relative z-10 p-8 rounded-3xl bg-white/10 backdrop-blur-xl shadow-2xl overflow-hidden"
+        className="relative z-10 p-8 rounded-3xl bg-white/5 backdrop-blur-xl shadow-2xl overflow-hidden"
       >
         {/* ✨ Subtle Inner Overlay */}
-        <div className="absolute inset-0 bg-gradient-to-tr from-white/10 via-transparent to-transparent opacity-40 pointer-events-none" />
+        <div className="absolute inset-0 bg-gradient-to-tr from-white/5 via-transparent to-transparent opacity-40 pointer-events-none" />
 
         {/* 🖼️ Profile Image with Breathing Animated Ring */}
         <div className="relative inline-block mb-6">
@@ -105,14 +105,17 @@ const Hero = () => {
           impactful digital experiences.
         </motion.p>
 
-        <motion.p
-          className="mt-3 text-base md:text-lg text-accentLight italic"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 0.5, duration: 0.6 }}
-        >
-          From Canva & Figma prototypes to fully responsive React + Tailwind apps
-        </motion.p>
+       <motion.p
+  className="text-sky-300 italic text-sm relative z-10"
+  animate={{ x: [-10, 10, -10] }} // left to right movement
+  transition={{
+    duration: 4,        // smooth slow movement
+    repeat: Infinity,   // infinite loop
+    ease: "easeInOut",  // smooth easing
+  }}
+>
+  From Canva & Figma prototypes to fully responsive React + Tailwind apps
+</motion.p>
 
         {/* 📄 Resume & Hire Me Buttons Row */}
         <motion.div
