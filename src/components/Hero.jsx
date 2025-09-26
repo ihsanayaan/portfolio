@@ -112,7 +112,7 @@ const Hero = () => {
           animate={{ opacity: 1 }}
           transition={{ delay: 0.5, duration: 0.6 }}
         >
-          Turning Canva prototypes into fully responsive React + Tailwind apps
+          From Canva and Figma prototypes to fully responsive React + Tailwind apps
         </motion.p>
 
        {/* 📄 Resume & Hire Me Buttons Row */}
@@ -147,33 +147,35 @@ const Hero = () => {
     <span className="relative z-10">Download Resume</span>
   </motion.a>
 
-  {/* 🚀 Hire Me Button (scrolls to Contact section) */}
-  <Link
-    to="contact"
-    smooth={true}
-    offset={-80}
-    duration={600}
-    className="cursor-pointer"
+ {/* 🚀 Hire Me Button (scrolls to Contact section) */}
+<Link
+  to="contact"
+  smooth={true}
+  offset={-80}
+  duration={600}
+  className="cursor-pointer"
+>
+  <motion.div
+    whileHover={{
+      scale: 1.1,
+      boxShadow: "0px 0px 25px rgba(255,111,216,0.7)",
+    }}
+    whileTap={{ scale: 0.95 }}
+    className="relative flex flex-wrap items-center justify-center gap-2 
+               px-4 sm:px-6 py-2 rounded-lg 
+               bg-gradient-to-r from-[#FF6FD8] to-[#6C63FF] 
+               text-white font-semibold shadow-lg overflow-hidden group 
+               text-sm sm:text-base"
   >
-    <motion.div
-      whileHover={{
-        scale: 1.1,
-        boxShadow: "0px 0px 25px rgba(255,111,216,0.7)",
-      }}
-      whileTap={{ scale: 0.95 }}
-      className="relative inline-flex items-center gap-2 px-6 py-2 rounded-lg 
-                 bg-gradient-to-r from-[#FF6FD8] to-[#6C63FF] 
-                 text-white font-semibold shadow-lg overflow-hidden group"
+    {/* 🤝 Animated Icon */}
+    <motion.span
+      animate={{ y: [0, -3, 0] }}
+      transition={{ repeat: Infinity, duration: 1.2 }}
+      className="text-base sm:text-lg"
     >
-      {/* 🤝 Animated Icon */}
-      <motion.span
-        animate={{ y: [0, -3, 0] }}
-        transition={{ repeat: Infinity, duration: 1.2 }}
-        className="text-lg"
-      >
-        🤝
-      </motion.span>
-      <span className="relative z-10">Hire Me</span>
+      🤝
+    </motion.span>
+    <span className="relative z-10">Hire Me</span>
 
       {/* ✨ Glow Effect */}
       <span className="absolute inset-0 rounded-lg opacity-0 group-hover:opacity-20 transition duration-500 bg-white"></span>
