@@ -15,6 +15,13 @@ const projects = [
     demo: 'https://unsplash-gallery-app-eight.vercel.app/',
     code: "https://github.com/ihsanayaan/unsplash-gallery-app.git",
   },
+   {
+    title: '💯 Landing Page',
+    description: 'Modern glassmorphism landing page clean animated and responsive',
+    image: '/project15.png',
+    demo: 'https://react-glass-landing.vercel.app/',
+    code: "https://github.com/ihsanayaan/react-glass-landing.git",
+  },
   {
     title: '🛍️ E-commerce Platform',
     description: "Full stack e-commerce platform with Firebase backend, Stripe payments, and admin dashboard. Built with React, Redux, and Tailwind CSS.",
