@@ -47,28 +47,28 @@ const Contact = () => {
         name="user_name"
         placeholder="Your Name"
         required
-        className="w-full px-4 py-2 bg-bgDark border border-borderLight rounded-soft text-textMain outline-none"
+        className="w-full px-4 py-2 rounded-soft bg-gradient-to-r from-[#0f172a] to-[#1e293b] text-gray-100 shadow-lg shadow-black/20 focus:shadow-cyan-500/40 focus:ring-1 focus:ring-cyan-400 transition-all duration-300 outline-none"
       />
       <input
         type="email"
         name="user_email"
         placeholder="Your Email"
         required
-        className="w-full px-4 py-2 bg-bgDark border border-borderLight rounded-soft text-textMain outline-none"
+        className="w-full px-4 py-2 rounded-soft bg-gradient-to-r from-[#0f172a] to-[#1e293b] text-gray-100 shadow-lg shadow-black/20 focus:shadow-cyan-500/40 focus:ring-1 focus:ring-cyan-400 transition-all duration-300 outline-none"
       />
       <textarea
         name="message"
         rows="4"
         placeholder="Your Message"
         required
-        className="w-full px-4 py-2 bg-bgDark border border-borderLight rounded-soft text-textMain outline-none"
+        className="w-full px-4 py-2 rounded-soft bg-gradient-to-r from-[#0f172a] to-[#1e293b] text-gray-100 shadow-lg shadow-black/20 focus:shadow-cyan-500/40 focus:ring-1 focus:ring-cyan-400 transition-all duration-300 outline-none"
       />
-      <button
-        type="submit"
-       className="bg-[#1A1A1A] text-accentLight px-6 py-2 rounded-soft border border-accentLight hover:bg-[#222222] hover:text-white hover:shadow-md hover:shadow-accentLight/20 transition duration-300"
-      >
-        Send Message
-      </button>
+    <button
+  type="submit"
+  className="relative w-fit px-6 py-2 rounded-soft bg-gradient-to-r from-[#0f172a] to-[#1e293b] text-gray-100 font-medium shadow-lg shadow-black/30 hover:shadow-cyan-500/40 hover:-translate-y-0.5 hover:text-cyan-400 transition-all duration-300 outline-none"
+>
+  Send Message
+</button>
       {done && <p className="text-green-500 mt-2">Message sent successfully ✅</p>}
     </form>
       </div>
