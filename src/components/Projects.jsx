@@ -152,7 +152,7 @@ const Projects = () => {
                 scale: 1.03,
                 boxShadow: "0 12px 30px rgba(0,0,0,0.45)",
               }}
-              className="relative bg-bgDark p-4 rounded-soft border border-accentLight/40 shadow-md transition-all group overflow-hidden"
+            className="w-full px-4 py-2 rounded-soft bg-gradient-to-r from-[#0f172a] to-[#1e293b] text-gray-100 shadow-lg shadow-black/20 focus:shadow-cyan-500/40 focus:ring-1 focus:ring-cyan-400 transition-all duration-300 outline-none"
             >
               {/* ✨ Hover Glow Border */}
               <motion.div
@@ -212,7 +212,7 @@ const Projects = () => {
                     rel="noopener noreferrer"
                     whileHover={{ scale: 1.08 }}
                     whileTap={{ scale: 0.95 }}
-                    className="relative bg-[#1A1A1A] text-accentLight px-4 py-1 rounded-soft border border-accentLight overflow-hidden"
+                    className="w-full px-4 py-2 rounded-soft bg-gradient-to-r from-[#0f172a] to-[#1e293b] text-gray-100 shadow-lg shadow-black/20 focus:shadow-cyan-500/40 focus:ring-1 focus:ring-cyan-400 transition-all duration-300 outline-none"
                   >
                     <span className="relative z-10">Live Demo</span>
                     {/* Hover Glow Effect */}
@@ -231,8 +231,8 @@ const Projects = () => {
                     rel="noopener noreferrer"
                     whileHover={{ scale: 1.08 }}
                     whileTap={{ scale: 0.95 }}
-                    className="relative bg-[#1A1A1A] text-accentLight px-4 py-1 rounded-soft border border-accentLight overflow-hidden"
-                  >
+                    className="w-full px-4 py-2 rounded-soft bg-gradient-to-r from-[#0f172a] to-[#1e293b] text-gray-100 shadow-lg shadow-black/20 focus:shadow-cyan-500/40 focus:ring-1 focus:ring-cyan-400 transition-all duration-300 outline-none"
+                    >
                     <span className="relative z-10">GitHub</span>
                     <motion.span
                       className="absolute inset-0 bg-accentLight/10"
