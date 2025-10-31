@@ -22,7 +22,7 @@ const experienceData = [
     'Designed and deployed AI chatbot app with voice input/output using Gemini API',
     'Created Sticky Notes app with localStorage, speech-to-text and Masonry layout',
   ],
-  skills: ['React.js', 'Tailwind CSS', 'Framer Motion', 'Firebase', 'Stripe API', 'OpenAI/Gemini API'],
+  skills: ['React.js', 'Tailwind CSS', 'Framer Motion', 'OpenAI/Gemini API'],
 },
   {
     role: 'Virtual Intern',
@@ -113,7 +113,11 @@ const Experience = () => {
                 {exp.skills.map((skill, i) => (
                   <span
                     key={i}
-                    className="inline-flex items-center gap-1 px-3 py-1 bg-[#1A1A1A] text-accentLight border border-accentLight rounded-full"
+                   className="inline-flex items-center gap-1 px-3 py-1 
+rounded-full bg-[#0f172a]/60 text-accentLight 
+hover:bg-cyan-500/20 hover:text-white 
+shadow-[0_0_10px_rgba(78,198,241,0.2)] hover:shadow-[0_0_20px_rgba(78,198,241,0.4)] 
+backdrop-blur-md transition-all duration-300 cursor-default"
                   >
                     <FaCheckCircle className="text-[10px]" />
                     {skill}

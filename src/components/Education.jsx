@@ -86,8 +86,11 @@ const Education = () => {
                     />
                     <button
                       onClick={() => openPreview(edu.degreeCertificate)}
-                      className="mt-2 w-full px-3 py-2 text-sm rounded-soft border border-accentLight text-accentLight hover:bg-[#222] transition"
-                    >
+                      className="mt-2 w-full px-3 py-2 text-sm rounded-soft 
+bg-[#0f172a]/60 text-accentLight hover:bg-cyan-500/20 hover:text-white 
+shadow-[0_0_10px_rgba(78,198,241,0.2)] hover:shadow-[0_0_20px_rgba(78,198,241,0.4)] 
+transition-all duration-300 cursor-pointer text-center backdrop-blur-md"
+ >
                       Degree Certificate
                     </button>
                   </div>
@@ -103,8 +106,11 @@ const Education = () => {
                     />
                     <button
                       onClick={() => openPreview(cert)}
-                      className="mt-2 w-full px-3 py-2 text-sm rounded-soft border border-accentLight text-accentLight hover:bg-[#222] transition"
-                    >
+                     className="mt-2 w-full px-3 py-2 text-sm rounded-soft 
+bg-[#0f172a]/60 text-accentLight hover:bg-cyan-500/20 hover:text-white 
+shadow-[0_0_10px_rgba(78,198,241,0.2)] hover:shadow-[0_0_20px_rgba(78,198,241,0.4)] 
+transition-all duration-300 cursor-pointer text-center backdrop-blur-md"
+ >
                       Internship Certificate
                     </button>
                   </div>
