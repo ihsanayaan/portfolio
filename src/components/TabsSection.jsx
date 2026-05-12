@@ -3,14 +3,14 @@ import { motion } from 'framer-motion';
 import {
   FaHtml5, FaCss3Alt, FaJs, FaReact, FaGitAlt, FaGithub,
   FaFigma, FaChrome, FaTools, FaPeopleCarry, FaPuzzlePiece,
-  FaComments, FaClock, FaMoon, FaRegEye, FaRoute,
+  FaComments, FaClock, FaMoon, FaRegEye, FaRoute, FaCheckCircle
 } from 'react-icons/fa';
 import {
   SiTailwindcss, SiFramer, SiTypescript, SiPostman,
   SiVite, SiAxios, SiReact, SiFormik, SiLucide
 } from 'react-icons/si';
 import { MdDesignServices } from 'react-icons/md';
-import { BsMouse } from 'react-icons/bs'; // For React Scroll
+import { BsMouse } from 'react-icons/bs';
 
 const iconMap = {
   HTML5: <FaHtml5 className="text-orange-500" />,
@@ -31,10 +31,12 @@ const iconMap = {
   Postman: <SiPostman className="text-orange-400" />,
   Vite: <SiVite className="text-purple-400" />,
   "UI/UX Design": <MdDesignServices className="text-rose-400" />,
+  Wireframing: <MdDesignServices className="text-purple-400" />,
   "Custom Dark Theme": <FaMoon className="text-indigo-300" />,
   "React Scroll": <BsMouse className="text-green-400" />,
-    "ShadCN UI": <SiLucide className="text-purple-400" />,
+  "ShadCN UI": <SiLucide className="text-purple-400" />,
   Formik: <SiFormik className="text-pink-300" />,
+  Yup: <FaCheckCircle className="text-green-400" />, // ← Fixed
   "React Router": <FaRoute className="text-red-400" />,
   Teamwork: <FaPeopleCarry className="text-blue-300" />,
   "Problem-Solving": <FaPuzzlePiece className="text-purple-300" />,
@@ -46,15 +48,24 @@ const iconMap = {
 const categories = {
   "Tech Stack": [
     "HTML5", "CSS3", "JavaScript", "React.js", "Tailwind CSS",
-    "Framer Motion", "React Icons", "React Toastify",
-    "UI/UX Design", "Custom Dark Theme", "React Scroll", "TypeScript","ShadCN UI", "Formik", "Yup", "React Router"
+    "Framer Motion", "TypeScript", "React Router", "Axios",
+    "React Icons", "React Toastify", "ShadCN UI", "Formik", "Yup"
   ],
-  Tools: [
-    "Git & GitHub", "VS Code", "Figma", "Chrome DevTools",
-    "Axios", "Vite"
+  "Design Tools": [
+    "Figma", 
+    "Canva", 
+    "Wireframing", 
+    "UI/UX Design", 
+    "Prototyping",
+    "Design Systems"
+  ],
+  "Tools": [
+    "Git & GitHub", "VS Code", "Chrome DevTools",
+    "Vite", "React Scroll"
   ],
   "Soft Skills": [
-    "Teamwork", "Problem-Solving", "Communication", "Adaptability", "Time Management"
+    "Custom Dark Theme", "Teamwork",
+    "Problem-Solving", "Communication", "Adaptability", "Time Management"
   ],
 };
 
@@ -63,61 +74,44 @@ const TabsSection = () => {
 
   return (
     <div className="mt-8">
-   {/* Tab Buttons */}
-<div className="flex justify-center gap-4 mb-6 flex-wrap">
-  {Object.keys(categories).map((key, index) => (
-    <motion.button
-      key={key}
-      onClick={() => setActiveTab(key)}
-      whileHover={{ scale: 1.08 }}
-      whileTap={{ scale: 0.95 }}
-      initial={{ opacity: 0, y: -10 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.3, delay: index * 0.1 }}
-      className={`px-4 py-2 rounded-soft font-medium border transition-all relative overflow-hidden
-        ${
-          activeTab === key
-            ? "bg-[#1A1A1A] text-accentLight border-accentLight/50 shadow-md shadow-accent/20"
-            : "bg-[#0F0F0F] text-textSub border-borderLight hover:bg-[#1C1C1C]/50"
-        }`}
-    >
-      {/* ✨ Active Tab Glow Background */}
-      {activeTab === key && (
-        <motion.span
-          layoutId="activeTabGlow"
-          className="absolute inset-0 bg-gradient-to-r from-[#4EC6F1]/10 via-[#6C63FF]/10 to-[#FF6FD8]/10 rounded-soft"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.4 }}
-        />
-      )}
-      <span className="relative z-10">{key}</span>
-    </motion.button>
-  ))}
-</div>
-      {/* Animated Skills List */}
-      <motion.ul
+      <div className="flex justify-center gap-2 md:gap-3 mb-8 flex-wrap">
+        {Object.keys(categories).map((key) => (
+          <button
+            key={key}
+            onClick={() => setActiveTab(key)}
+            className={`px-4 md:px-6 py-2.5 rounded-lg font-medium transition-all duration-200
+              ${
+                activeTab === key
+              ? "bg-[#4EC6F1] text-white shadow-lg shadow-[#4EC6F1]/20"
+                  : "bg-[#1a1a1a] text-gray-400 hover:text-white hover:bg-[#252525] border border-gray-800"
+              }`}
+          >
+            {key}
+          </button>
+        ))}
+      </div>
+
+      <motion.div
         key={activeTab}
-        className="grid grid-cols-2 sm:grid-cols-3 gap-3 text-sm text-textSub"
-        initial={{ opacity: 0, y: 20 }}
+        initial={{ opacity: 0, y: 10 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.4 }}
+        transition={{ duration: 0.3 }}
+        className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 md:gap-4"
       >
         {categories[activeTab].map((skill, idx) => (
-          <motion.li
+          <motion.div
             key={idx}
-            className="flex items-center gap-2 pl-2"
-            initial={{ opacity: 0, x: -15 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ delay: idx * 0.05 }}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: idx * 0.03 }}
+            className="flex items-center gap-3 p-3 md:p-4 rounded-lg bg-[#1a1a1a] border border-gray-800 hover:border-[#4EC6F1]/50 hover:bg-[#1f1f1f] transition-all duration-200"
           >
-            <span className="text-lg">{iconMap[skill] || "🛠"}</span>
-            <span>{skill}</span>
-          </motion.li>
+            <span className="text-xl md:text-2xl flex-shrink-0">{iconMap[skill] || "🛠"}</span>
+            <span className="text-sm md:text-base text-gray-300 font-medium">{skill}</span>
+          </motion.div>
         ))}
-      </motion.ul>
+      </motion.div>
     </div>
   );
 };
-
 export default TabsSection;

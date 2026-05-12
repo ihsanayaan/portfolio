@@ -1,19 +1,27 @@
+import { motion } from 'framer-motion';
+
 const TooltipIcon = ({ href, icon: Icon, label, color = "#4EC6F1" }) => {
   return (
     <div className="relative group inline-block">
-      <a
+      <motion.a
         href={href}
         target="_blank"
-        rel="noreferrer"
-        className="text-accentLight hover:text-white hover:scale-110 hover:shadow-md hover:shadow-accentLight/30 transition duration-300 text-2xl"
+        rel="noopener noreferrer"
+        aria-label={label}
+        whileHover={{ scale: 1.2, y: -3 }}
+        whileTap={{ scale: 0.9 }}
+        transition={{ type: "spring", stiffness: 400 }}
+        className="text-accentLight hover:text-white hover:shadow-md hover:shadow-accentLight/30 transition-colors duration-300 text-2xl block"
       >
         <Icon />
-      </a>
+      </motion.a>
+      
       <span
-        className="absolute -top-8 left-1/2 -translate-x-1/2 text-xs px-2 py-1 rounded-md opacity-0 group-hover:opacity-100 transition duration-300 pointer-events-none whitespace-nowrap"
+        className="absolute -top-9 left-1/2 -translate-x-1/2 text-xs px-2 py-1 rounded-md opacity-0 group-hover:opacity-100 transition-all duration-300 pointer-events-none whitespace-nowrap z-10"
         style={{
           backgroundColor: '#1A1A1A',
           color: color,
+          boxShadow: `0 0 10px ${color}40`
         }}
       >
         {label}

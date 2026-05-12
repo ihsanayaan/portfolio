@@ -7,195 +7,139 @@ const Hero = () => {
   return (
     <section
       id="home"
-      className="relative h-screen flex flex-col justify-center items-center text-center px-6 bg-[#0D0D0D] overflow-hidden"
+      className="relative min-h-screen flex flex-col justify-center items-center text-center px-6 bg-[#0D0D0D] overflow-hidden"
     >
-      {/* 🌈 Multi-Layered Animated Glow Background */}
-      <motion.div
-        animate={{ scale: [1, 1.2, 1], opacity: [0.3, 0.5, 0.4] }}
-        transition={{ duration: 12, repeat: Infinity, ease: "easeInOut" }}
-        className="absolute top-1/3 left-1/2 -translate-x-1/2 w-[900px] h-[900px] 
-                   bg-gradient-to-r from-[#4EC6F1] via-[#6C63FF] to-[#FF6FD8] 
-                   rounded-full blur-[200px] opacity-30 z-0"
-      />
-      <motion.div
-        animate={{ scale: [1, 1.15, 0.9, 1], opacity: [0.2, 0.35, 0.25, 0.3] }}
-        transition={{ duration: 15, repeat: Infinity, ease: "easeInOut" }}
-        className="absolute bottom-[-100px] left-[-100px] w-[600px] h-[600px] 
-                   bg-gradient-to-r from-[#FF6FD8] via-[#6C63FF] to-[#4EC6F1] 
-                   rounded-full blur-[180px] opacity-20 z-0"
-      />
+      {/* Subtle Single Glow - Clean */}
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px]
+                   bg-gradient-to-r from-[#4EC6F1]/20 via-[#6C63FF]/20 to-[#FF6FD8]/20
+                   rounded-full blur-[120px] z-0" />
 
-      {/* 🔤 Main Content (Glassmorphism Card - Clean) */}
+      {/* Main Content */}
       <motion.div
-        initial={{ opacity: 0, y: 30 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.7 }}
-        viewport={{ once: true }}
-        className="relative z-10 p-8 rounded-3xl bg-white/5 backdrop-blur-xl shadow-2xl overflow-hidden"
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6 }}
+        className="relative z-10 max-w-3xl"
       >
-        {/* ✨ Subtle Inner Overlay */}
-        <div className="absolute inset-0 bg-gradient-to-tr from-white/5 via-transparent to-transparent opacity-40 pointer-events-none" />
-
-        {/* 🖼️ Profile Image with Breathing Animated Ring */}
-        <div className="relative inline-block mb-6">
-          <motion.div
-            animate={{ rotate: 360, scale: [1, 1.08, 1] }}
-            transition={{ repeat: Infinity, duration: 12, ease: "linear" }}
-            className="absolute -inset-4 rounded-full border-4 border-transparent 
-                       bg-gradient-to-r from-[#4EC6F1] via-[#6C63FF] to-[#FF6FD8] 
-                       blur-md opacity-80"
-          />
-          <motion.img
-            src="/profile.jpg"
-            alt="Ihsan Ali"
-            initial={{ scale: 0.9 }}
-            animate={{ scale: 1 }}
-            transition={{ duration: 0.6, ease: "easeOut" }}
-            whileHover={{ scale: 1.05 }}
-            className="relative w-36 h-36 rounded-full object-cover object-top 
-                       shadow-lg border-2 border-accentLight transition-all duration-300"
-          />
-        </div>
-
-        {/* 🙋‍♂️ Name */}
-        <motion.h1
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, ease: "easeOut", delay: 0.2 }}
-          viewport={{ once: true }}
-          className="text-4xl md:text-5xl font-bold text-white mb-2"
+        {/* Open to Work Badge - KSA FOCUSED */}
+        <motion.div
+          initial={{ opacity: 0, y: -20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5 }}
+          className="inline-flex items-center gap-2 bg-[#10B981]/10 border border-[#10B981] px-4 py-2 rounded-full mb-6"
         >
-          Hi, I'm
+          <span className="relative flex h-3 w-3">
+            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#10B981] opacity-75"></span>
+            <span className="relative inline-flex rounded-full h-3 w-3 bg-[#10B981]"></span>
+          </span>
+          <span className="text-[#10B981] text-sm font-semibold">
+            Open to Roles in Riyadh, Jeddah & Remote KSA
+          </span>
+        </motion.div>
+
+        {/* Profile Image - Clean, No Ring */}
+        <motion.img
+          src="/profile.jpg"
+          alt="Ihsan Ali"
+          initial={{ scale: 0.9, opacity: 0 }}
+          animate={{ scale: 1, opacity: 1 }}
+          transition={{ duration: 0.5, delay: 0.1 }}
+          className="w-32 h-32 md:w-36 md:h-36 rounded-full object-cover object-top
+                     mx-auto mb-6 border-4 border-[#1a1a1a] shadow-xl"
+        />
+
+        {/* Name */}
+        <motion.h1
+          initial={{ opacity: 0, y: 10 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: 0.2 }}
+          className="text-4xl md:text-6xl font-bold text-white mb-3"
+        >
+          Hi, I'm Ihsan Ali
         </motion.h1>
 
-        {/* ✍️ Typewriter Text */}
+        {/* Typewriter - KSA Focused */}
         <motion.h2
           initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          transition={{ duration: 0.6, delay: 0.6 }}
-          viewport={{ once: true }}
-          className="text-lg md:text-xl text-accentLight font-semibold tracking-wide mb-4"
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.5, delay: 0.3 }}
+          className="text-xl md:text-2xl text-[#4EC6F1] font-semibold mb-6 h-8"
         >
           <Typewriter
             words={[
-              "Ihsan Ali",
-              "Front-End Developer",
-              "React Developer",
-              "UI/UX Designer",
+              "Product Designer",
+              "Frontend Developer",
+              "React.js Specialist",
+              "RTL/LTR Expert",
+              "Arabic UI Designer"
             ]}
             loop
             cursor
             cursorStyle="|"
             typeSpeed={70}
             deleteSpeed={50}
-            delaySpeed={1500}
+            delaySpeed={2000}
           />
         </motion.h2>
 
-        {/* ✨ Short Subtitle */}
+        {/* Subtitle - Saudi Focused */}
         <motion.p
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, ease: "easeOut", delay: 0.4 }}
-          viewport={{ once: true }}
-          className="text-sm md:text-base text-gray-300 max-w-md mx-auto mb-4"
+          initial={{ opacity: 0, y: 10 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: 0.4 }}
+          className="text-sm md:text-lg text-gray-400 max-w-2xl mx-auto mb-8 leading-relaxed px-4 md:px-0"
         >
-          I design and develop modern websites that blend clean design, smooth
-          interactions and strong functionality helping ideas turn into
-          impactful digital experiences.
+          I build modern, Arabic-first web applications with React & Next.js. Specialized in bilingual RTL/LTR interfaces for Saudi market.
+          <span className="text-white font-semibold block mt-2">Available for immediate relocation to Riyadh, KSA.</span>
         </motion.p>
 
-       <motion.p
-  className="text-sky-300 italic text-sm relative z-10"
-  animate={{ x: [-10, 10, -10] }} // left to right movement
-  transition={{
-    duration: 4,        // smooth slow movement
-    repeat: Infinity,   // infinite loop
-    ease: "easeInOut",  // smooth easing
-  }}
->
-  From Canva & Figma prototypes to fully responsive React + Tailwind apps
-</motion.p>
-
-        {/* 📄 Resume & Hire Me Buttons Row */}
+        {/* Buttons - Clean */}
         <motion.div
-          className="mt-6 flex flex-row gap-4 justify-center flex-wrap"
-          initial={{ opacity: 0, y: 30, scale: 0.9 }}
-          whileInView={{ opacity: 1, y: 0, scale: 1 }}
-          transition={{ duration: 0.6, ease: "easeOut", delay: 0.8 }}
-          viewport={{ once: true }}
+          initial={{ opacity: 0, y: 10 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: 0.5 }}
+          className="flex flex-col sm:flex-row gap-4 justify-center items-center"
         >
-          {/* 📄 Resume Button */}
+          {/* Resume Button */}
           <motion.a
             href="/IhsanAli_Resume.pdf"
             download
-            whileHover={{
-              scale: 1.08,
-              boxShadow: "0px 0px 20px rgba(128,208,255,0.6)",
-            }}
+            whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
-            className="relative inline-flex items-center gap-2 px-6 py-2 rounded-lg 
-                       bg-gradient-to-r from-[#4EC6F1] to-[#FF6FD8] 
-                       text-white font-semibold shadow-lg overflow-hidden group"
+            className="inline-flex items-center gap-2 px-8 py-3 rounded-lg
+                       bg-[#4EC6F1] hover:bg-[#3db5e0]
+                       text-white font-semibold shadow-lg transition-all duration-300"
           >
-            <motion.span
-              animate={{ y: [0, -3, 0] }}
-              transition={{ repeat: Infinity, duration: 1.2 }}
-              className="text-lg"
-            >
-              <FaDownload />
-            </motion.span>
-            <span className="relative z-10">Download Resume</span>
+            <FaDownload className="text-sm" />
+            Download Resume
           </motion.a>
 
-          {/* 🚀 Hire Me Button */}
-          <Link
-            to="contact"
-            smooth={true}
-            offset={-80}
-            duration={600}
-            className="cursor-pointer"
-          >
-            <motion.div
-              whileHover={{
-                scale: 1.1,
-                boxShadow: "0px 0px 25px rgba(255,111,216,0.7)",
-              }}
+          {/* Hire Me Button */}
+          <Link to="contact" smooth={true} offset={-80} duration={600}>
+            <motion.button
+              whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className="relative inline-flex items-center gap-2 px-6 py-2 rounded-lg 
-                         bg-gradient-to-r from-[#FF6FD8] to-[#6C63FF] 
-                         text-white font-semibold shadow-lg overflow-hidden group"
+              className="inline-flex items-center gap-2 px-8 py-3 rounded-lg
+                         border-2 border-[#4EC6F1] text-[#4EC6F1] hover:bg-[#4EC6F1]/10
+                         font-semibold transition-all duration-300"
             >
-              <motion.span
-                animate={{ y: [0, -3, 0] }}
-                transition={{ repeat: Infinity, duration: 1.2 }}
-                className="text-lg"
-              >
-                🤝
-              </motion.span>
-              <span className="relative z-10">Hire Me</span>
-              <span className="absolute inset-0 rounded-lg opacity-0 group-hover:opacity-20 transition duration-500 bg-white"></span>
-            </motion.div>
+              Hire Me
+            </motion.button>
           </Link>
         </motion.div>
       </motion.div>
 
-      {/* ⬇️ Scroll Down Arrow */}
+      {/* Scroll Down - Simple */}
       <Link
         to="about"
         smooth={true}
         offset={-80}
         duration={600}
-        className="absolute bottom-10 text-accentLight text-2xl cursor-pointer"
+        className="absolute bottom-8 text-gray-500 hover:text-[#4EC6F1] text-xl cursor-pointer transition-colors"
       >
         <motion.div
-          initial={{ opacity: 0, y: -10 }}
-          animate={{ opacity: 1, y: 10 }}
-          transition={{
-            repeat: Infinity,
-            duration: 1.5,
-            repeatType: "reverse",
-          }}
+          animate={{ y: [0, 8, 0] }}
+          transition={{ repeat: Infinity, duration: 1.5 }}
         >
           <FaChevronDown />
         </motion.div>

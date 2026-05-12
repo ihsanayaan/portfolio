@@ -6,30 +6,42 @@ const About = () => {
   return (
     <section
       id="about"
-      className="pt-24 scroll-mt-24 bg-bgDarkAlt px-6 py-16 border border- border-accentLight/50 rounded-soft"
+      className="scroll-mt-24 bg-[#111] px-4 md:px-6 py-16 md:py-20"
     >
-      <div className="max-w-4xl mx-auto text-center space-y-8">
+      <div className="max-w-4xl mx-auto">
         {/* Section Heading */}
-        <SectionHeading title="🙋‍♂️ About Me" />
+        <SectionHeading title="About Me" />
 
-        {/* Description */}
-        <motion.p
-          className="text-textMain leading-relaxed"
+        {/* Description - Clean & Professional */}
+        <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
           viewport={{ once: true }}
+          className="mt-8 space-y-6 text-gray-300 leading-relaxed text-base md:text-lg"
         >
-          I'm <strong className="text-accentLight">Ihsan Ali</strong> a Front-End Developer focused on building beautiful, responsive and user friendly websites using React.js, Tailwind CSS and modern UI/UX principles.
-          <br /><br />
-          I start by creating high level prototypes in <strong className='text-accentLight'>
-            Canva</strong> and <strong className='text-accentLight'>
-            Figma</strong> to align with client expectation and then trasform those designs into real world, responsive applications using <strong className='text-accentLight'>React.js</strong> and <strong className='text-accentLight'>TailwindCSS</strong>
-            <br /><br />
-            In short: <span className='italic text-accentLight'>I turn Canva and Figma prototypes into fully responsive React + Tailwind apps.</span>
-         </motion.p>
+          <p>
+            I'm <span className="text-[#4EC6F1] font-semibold">Ihsan Ali</span>, 
+            a Front-End Developer specializing in building modern, responsive web applications 
+            with <span className="text-[#4EC6F1]">React.js</span> and <span className="text-[#4EC6F1]">Tailwind CSS</span>.
+          </p>
+
+         <p>
+  My workflow starts with creating detailed prototypes in <span className="text-[#4EC6F1]">Figma</span> and <span className="text-[#4EC6F1]">Canva</span> to 
+  ensure alignment with client requirements. I design complete wireframes, user flows, and high-fidelity mockups before 
+  transforming them into pixel-perfect React applications.
+</p>
+
+          <p className="text-[#4EC6F1] font-medium italic border-l-4 border-[#4EC6F1] pl-4 py-2 bg-[#4EC6F1]/5 rounded-r">
+            Specialized in RTL/LTR bilingual interfaces and turning design mockups into 
+            fully functional React applications.
+          </p>
+        </motion.div>
+
         {/* Tabs Section */}
-        <TabsSection />
+        <div className="mt-12">
+          <TabsSection />
+        </div>
       </div>
     </section>
   );
