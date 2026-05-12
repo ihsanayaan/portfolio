@@ -88,7 +88,6 @@ const projects = [
 // ✅ PROJECT CARD - FIGMA + DUAL IMAGES + STATUS BADGES
 const ProjectCard = ({ project, index }) => {
   const hasDualImages = project.imageAr && project.imageEn;
-  const hasOnlyFigma = project.figma &&!project.demo &&!project.code;
 
   return (
     <motion.div

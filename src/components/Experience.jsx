@@ -2,12 +2,9 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import {
   FaLaptopCode,
-  FaUserAlt,
   FaCheckCircle,
   FaFigma,
-  FaPalette,
   FaCode,
-  FaBriefcase,
 } from 'react-icons/fa';
 
 const experienceData = [
