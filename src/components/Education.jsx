@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { FaGraduationCap, FaSchool, FaFileDownload, FaStar, FaTimes, FaBriefcase, FaDownload, FaAward } from 'react-icons/fa';
+import { FaGraduationCap, FaSchool, FaFileDownload, FaStar, FaTimes, FaBriefcase, } from 'react-icons/fa';
 import SectionHeading from './SectionHeading';
 
 const educationData = [
