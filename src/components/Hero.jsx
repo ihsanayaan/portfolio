@@ -89,7 +89,7 @@ const Hero = () => {
           transition={{ duration: 0.5, delay: 0.4 }}
           className="text-sm md:text-lg text-gray-400 max-w-2xl mx-auto mb-8 leading-relaxed px-4 md:px-0"
         >
-          I build modern, Arabic-first web applications with React & Next.js. Specialized in bilingual RTL/LTR interfaces for Saudi market.
+          I build modern, Arabic first web applications with React.js. Specialized in bilingual RTL/LTR interfaces for Saudi market.
           <span className="text-white font-semibold block mt-2">Available for immediate relocation to Riyadh, KSA.</span>
         </motion.p>
 
@@ -102,7 +102,7 @@ const Hero = () => {
         >
           {/* Resume Button */}
           <motion.a
-            href="/IhsanAli_Resume.pdf"
+            href="/Ihsan_Ali_Figma_Resume.pdf"
             download
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}

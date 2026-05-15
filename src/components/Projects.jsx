@@ -188,7 +188,7 @@ const ProjectCard = ({ project, index }) => {
               rel="noopener noreferrer"
               className="flex-1 min-w-[100px] text-center px-3 py-2.5 rounded-lg bg-[#4EC6F1] hover:bg-[#3db5e0] text-white font-semibold text-sm transition-all duration-200 flex items-center justify-center gap-2"
             >
-              <FaExternalLinkAlt className="text-xs" /> Demo
+              <FaExternalLinkAlt className="text-xs" /> View Live
             </a>
           )}
           {project.figma && (
@@ -198,7 +198,7 @@ const ProjectCard = ({ project, index }) => {
               rel="noopener noreferrer"
               className="flex-1 min-w-[100px] text-center px-3 py-2.5 rounded-lg bg-[#5bb1c7] hover:bg-[#23acbc] text-white font-semibold text-sm transition-all duration-200 flex items-center justify-center gap-2"
             >
-              <FaFigma className="text-xs" /> Figma
+              <FaFigma className="text-xs" /> View Figma
             </a>
           )}
           {project.code && (
@@ -208,7 +208,7 @@ const ProjectCard = ({ project, index }) => {
               rel="noopener noreferrer"
               className="flex-1 min-w-[100px] text-center px-3 py-2.5 rounded-lg border-2 border-gray-700 text-gray-300 hover:border-[#4EC6F1] hover:text-[#4EC6F1] font-semibold text-sm transition-all duration-200 flex items-center justify-center gap-2"
             >
-              <FaGithub className="text-xs" /> Code
+              <FaGithub className="text-xs" /> View Code
             </a>
           )}
         </div>
