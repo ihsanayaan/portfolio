@@ -2,7 +2,7 @@ import React, { useRef, useState } from 'react';
 import SectionHeading from '../components/SectionHeading';
 import { motion } from 'framer-motion';
 import emailjs from 'emailjs-com';
-import { FaMapMarkerAlt, FaEnvelope, FaWhatsapp, FaClock } from 'react-icons/fa';
+import { FaEnvelope, FaWhatsapp, FaClock } from 'react-icons/fa';
 
 const Contact = () => {
   const form = useRef();
