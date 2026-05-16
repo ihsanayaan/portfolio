@@ -18,16 +18,25 @@ const Navbar = () => {
     { name: "Contact", to: "contact" },
   ];
 
-  useEffect(() => {
-    const handleScroll = () => {
-      const currentScroll = window.scrollY;
-      setShowNavbar(currentScroll < lastScrollY || currentScroll < 50);
-      setLastScrollY(currentScroll);
-    };
+ useEffect(() => {
+  let lastY = window.scrollY;
 
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, [lastScrollY]);
+  const handleScroll = () => {
+    if (window.scrollY > lastY && window.scrollY > 80) {
+      setShowNavbar(false);
+    } else {
+      setShowNavbar(true);
+    }
+
+    lastY = window.scrollY;
+  };
+
+  window.addEventListener("scroll", handleScroll);
+
+  return () => {
+    window.removeEventListener("scroll", handleScroll);
+  };
+}, []);
 
   const handleLinkClick = (to) => {
     setIsOpen(false);
@@ -42,7 +51,7 @@ const Navbar = () => {
       className="fixed top-0 left-0 w-full z-50"
     >
       {/* Clean Glass Navbar */}
-      <div className="backdrop-blur-xl bg-[#0d0d0d]/80 border-b border-gray-800/50">
+      <div className="backdrop-blur-2xl bg-[#0d0d0d]/70 border-b border-gray-800/50">
         <div className="max-w-7xl mx-auto flex justify-between items-center px-4 md:px-8 py-4">
 
           {/* Logo - Optimized with WebP + Hover */}
@@ -78,11 +87,11 @@ const Navbar = () => {
                 offset={-80}
                 duration={500}
                 onSetActive={() => setActiveLink(link.to)}
-                className={`px-4 py-2 rounded-lg font-medium transition-all duration-300 cursor-pointer ${
-                  activeLink === link.to
-                   ? "text-[#4EC6F1] bg-[#4EC6F1]/10"
-                    : "text-gray-300 hover:text-white hover:bg-white/5"
-                }`}
+                className={`relative px-4 py-2 rounded-xl font-medium transition-all duration-300 cursor-pointer ${
+                activeLink === link.to
+                ? "text-[#4EC6F1] bg-[#4EC6F1]/10"
+                : "text-gray-300 hover:text-white hover:bg-white/5"
+        }`}
               >
                 {link.name}
               </Link>
@@ -100,39 +109,66 @@ const Navbar = () => {
         </div>
       </div>
 
-      {/* Mobile Dropdown */}
-      <AnimatePresence>
-        {isOpen && (
-          <motion.div
-            initial={{ opacity: 0, y: -10 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -10 }}
-            transition={{ duration: 0.2 }}
-            className="md:hidden bg-[#0D0D0D]/95 backdrop-blur-xl border-b border-gray-800/50"
-          >
-            <div className="flex flex-col py-2">
-              {navLinks.map((link) => (
-                <Link
-                  key={link.name}
-                  to={link.to}
-                  spy={true}
-                  smooth={true}
-                  offset={-80}
-                  duration={500}
-                  onClick={() => handleLinkClick(link.to)}
-                  className={`w-full text-center py-3 px-4 font-medium transition-all duration-200 cursor-pointer ${
-                    activeLink === link.to
-                     ? "text-[#4EC6F1] bg-[#4EC6F1]/10"
-                      : "text-gray-300 hover:text-white hover:bg-white/5"
-                  }`}
-                >
-                  {link.name}
-                </Link>
-              ))}
-            </div>
-          </motion.div>
-        )}
-      </AnimatePresence>
+      {/* Mobile Sidebar */}
+<AnimatePresence>
+  {isOpen && (
+    <>
+      {/* Overlay */}
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        exit={{ opacity: 0 }}
+        onClick={() => setIsOpen(false)}
+        className="fixed inset-0 bg-black/50 backdrop-blur-sm z-40 md:hidden"
+      />
+
+      {/* Sidebar */}
+<motion.div
+  initial={{ x: "100%" }}
+  animate={{ x: 0 }}
+  exit={{ x: "100%" }}
+  transition={{ type: "spring", damping: 25 }}
+  className="fixed top-16 right-0 h-auto max-h-[calc(100vh-64px)] w-[280px]
+             bg-[#111]/95 backdrop-blur-2xl border-l border-t border-white/10
+             shadow-2xl z-50 md:hidden flex-col rounded-bl-2xl overflow-y-auto"
+>
+  {/* Header wapas */}
+  <div className="flex items-center justify-between p-5 border-b border-white/10">
+    <h2 className="text-white font-bold text-lg">Navigation</h2>
+
+    <button
+      onClick={() => setIsOpen(false)}
+      className="text-gray-400 hover:text-[#4EC6F1] text-xl transition p-2"
+    >
+      <FaTimes />
+    </button>
+  </div>
+
+  {/* Links */}
+  <div className="flex flex-col p-4 gap-2">
+    {navLinks.map((link) => (
+      <Link
+        key={link.name}
+        to={link.to}
+        spy={true}
+        smooth={true}
+        offset={-80}
+        duration={500}
+        onClick={() => handleLinkClick(link.to)}
+        className={`px-4 py-3 rounded-xl font-medium transition-all duration-300 cursor-pointer ${
+          activeLink === link.to
+           ? "text-[#4EC6F1] bg-[#4EC6F1]/10 border-[#4EC6F1]/20"
+            : "text-gray-300 hover:text-white hover:bg-white/5"
+        }`}
+      >
+        {link.name}
+      </Link>
+    ))}
+  </div>
+</motion.div>
+    </>
+  )}
+</AnimatePresence>
     </motion.nav>
   );
 };

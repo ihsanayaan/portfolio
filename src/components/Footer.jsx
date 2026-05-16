@@ -90,7 +90,7 @@ const Footer = () => {
             Front-End Developer passionate about building beautiful, responsive and user-friendly websites using React, Tailwind & UI/UX design.
           </p>
           <p className="text-accentLight font-medium">
-            Based in Pakistan 🇵🇰 | Open to Remote Roles in KSA 🇸🇦
+            Based in Pakistan 🇵🇰 | Open to Remote Frontend & UI/UX Opportunities Worldwide
           </p>
           <motion.div
             whileHover={{ scale: 1.02 }}

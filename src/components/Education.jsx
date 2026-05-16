@@ -98,12 +98,11 @@ const Education = () => {
               <div className="absolute left-6 md:left-1/2 top-6 w-12 h-12 rounded-full bg-[#1a1a1a] border-2 border-[#4EC6F1] flex items-center justify-center shadow-lg shadow-[#4EC6F1]/20 z-10 -translate-x-1/2 md:-translate-x-1/2">
                 {edu.icon}
               </div>
-
               {/* Content Card - FIXED ZIGZAG */}
               <div className={`ml-16 md:ml-0 md:w-[calc(50%-3rem)] ${
                 index % 2 === 0? 'md:mr-auto md:pr-12' : 'md:ml-auto md:pl-12'
               }`}>
-                <div className="bg-[#1a1a1a] rounded-xl border border-gray-800 hover:border-[#4EC6F1]/50 transition-all duration-300 p-6 shadow-lg hover:shadow-[#4EC6F1]/10">
+                <div className="bg-white/5 backdrop-blur-xl rounded-xl border border-gray-800 hover:border-[#4EC6F1]/50 transition-all duration-300 p-6 shadow-lg hover:shadow-[0_0_30px_rgba(78,198,241,0.15)]/10">
                   
                   {edu.featured && (
                     <div className="inline-block bg-[#4EC6F1] text-white text-xs font-bold px-3 py-1 rounded-full mb-3">
@@ -138,7 +137,7 @@ const Education = () => {
                             onClick={() => openPreview(edu.degreeCertificate)}
                             className="group cursor-pointer"
                           >
-                            <div className="relative overflow-hidden rounded-lg border border-gray-800 hover:border-[#4EC6F1] transition-all">
+                            <div className="relative overflow-hidden rounded-lg border border-white/10 hover:border-[#4EC6F1] transition-all">
                               <img
                                 src={edu.degreeCertificate.thumbnail}
                                 alt="Degree"

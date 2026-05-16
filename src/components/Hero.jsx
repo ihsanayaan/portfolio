@@ -19,9 +19,9 @@ const Hero = () => {
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
-        className="relative z-10 max-w-3xl"
+        className="relative z-10 max-w-4xl"
       >
-        {/* Open to Work Badge - KSA FOCUSED */}
+        {/* Open to Work Badge */}
         <motion.div
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -33,11 +33,11 @@ const Hero = () => {
             <span className="relative inline-flex rounded-full h-3 w-3 bg-[#10B981]"></span>
           </span>
           <span className="text-[#10B981] text-sm font-semibold">
-            Open to Roles in Riyadh, Jeddah & Remote KSA
+            Open to Remote Frontend & UI/UX Opportunities Worldwide
           </span>
         </motion.div>
 
-        {/* Profile Image - Clean, No Ring */}
+        {/* Profile Image*/}
         <motion.img
           src="/profile.jpg"
           alt="Ihsan Ali"
@@ -45,7 +45,7 @@ const Hero = () => {
           animate={{ scale: 1, opacity: 1 }}
           transition={{ duration: 0.5, delay: 0.1 }}
           className="w-32 h-32 md:w-36 md:h-36 rounded-full object-cover object-top
-                     mx-auto mb-6 border-4 border-[#1a1a1a] shadow-xl"
+                     mx-auto mb-6 border-4 border-white/10 hover:scale-105 transition-all duration-500"
         />
 
         {/* Name */}
@@ -67,11 +67,11 @@ const Hero = () => {
         >
           <Typewriter
             words={[
-              "Product Designer",
               "Frontend Developer",
+              "UI/UX Designer",
               "React.js Specialist",
               "RTL/LTR Expert",
-              "Arabic UI Designer"
+              "Modern Web Creator"
             ]}
             loop
             cursor
@@ -82,16 +82,31 @@ const Hero = () => {
           />
         </motion.h2>
 
-        {/* Subtitle - Saudi Focused */}
+        {/* Subtitle */}
         <motion.p
           initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.4 }}
           className="text-sm md:text-lg text-gray-400 max-w-2xl mx-auto mb-8 leading-relaxed px-4 md:px-0"
         >
-          I build modern, Arabic first web applications with React.js. Specialized in bilingual RTL/LTR interfaces for Saudi market.
-          <span className="text-white font-semibold block mt-2">Available for immediate relocation to Riyadh, KSA.</span>
+         I design and develop modern, responsive web applications with React.js and Figma. Specialized in clean UI/UX, bilingual RTL/LTR interfaces, and scalable frontend experiences for global users.
         </motion.p>
+       <div className="flex flex-wrap justify-center gap-3 mb-8">
+       {[
+        "React",
+        "Figma",
+        "Tailwind CSS",
+        "Framer Motion",
+        "RTL/LTR",
+        ].map((tech, index) => (
+       <span
+      key={index}
+      className="px-3 py-1 rounded-full bg-white/5 border border-white/10 text-[#4EC6F1] text-sm"
+    >
+           {tech}
+         </span>
+         ))}
+     </div>
 
         {/* Buttons - Clean */}
         <motion.div
@@ -106,7 +121,7 @@ const Hero = () => {
             download
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
-            className="inline-flex items-center gap-2 px-8 py-3 rounded-lg
+            className="inline-flex items-center gap-2 px-8 py-3 rounded-xl
                        bg-[#4EC6F1] hover:bg-[#3db5e0]
                        text-white font-semibold shadow-lg transition-all duration-300"
           >

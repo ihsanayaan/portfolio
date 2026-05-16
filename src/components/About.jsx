@@ -6,38 +6,58 @@ const About = () => {
   return (
     <section
       id="about"
-      className="scroll-mt-24 bg-[#111] px-4 md:px-6 py-16 md:py-20"
+      className="scroll-mt-24 bg-[#0D0D0D] px-4 md:px-6 py-16 md:py-20"
     >
-      <div className="max-w-4xl mx-auto">
+      <div className="max-w-5xl mx-auto">
         {/* Section Heading */}
         <SectionHeading title="About Me" />
 
         {/* Description - Clean & Professional */}
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5 }}
-          viewport={{ once: true }}
-          className="mt-8 space-y-6 text-gray-300 leading-relaxed text-base md:text-lg"
-        >
-          <p>
-            I'm <span className="text-[#4EC6F1] font-semibold">Ihsan Ali</span>, 
-            a Front-End Developer specializing in building modern, responsive web applications 
-            with <span className="text-[#4EC6F1]">React.js</span> and <span className="text-[#4EC6F1]">Tailwind CSS</span>.
-          </p>
+  initial={{ opacity: 0, y: 20 }}
+  whileInView={{ opacity: 1, y: 0 }}
+  transition={{ duration: 0.5 }}
+  viewport={{ once: true }}
+  className="mt-10 space-y-7 text-gray-300 leading-8 text-[15px] md:text-lg"
+>
+  <p>
+    I'm{" "}
+    <span className="text-[#4EC6F1] font-semibold">
+      Ihsan Ali
+    </span>
+    , a Frontend Developer and UI/UX Designer focused on
+    building modern, responsive, and user-friendly web
+    applications using{" "}
+    <span className="text-[#4EC6F1]">React.js</span>,{" "}
+    <span className="text-[#4EC6F1]">Tailwind CSS</span>,
+    and modern frontend technologies.
+  </p>
 
-         <p>
-  My workflow starts with creating detailed prototypes in <span className="text-[#4EC6F1]">Figma</span> and <span className="text-[#4EC6F1]">Canva</span> to 
-  ensure alignment with client requirements. I design complete wireframes, user flows, and high-fidelity mockups before 
-  transforming them into pixel-perfect React applications.
-</p>
+  <p>
+    My workflow begins with creating detailed wireframes,
+    user flows, and high-fidelity prototypes in{" "}
+    <span className="text-[#4EC6F1]">Figma</span> before
+    transforming them into clean, scalable, and
+    pixel-perfect React applications with strong focus on
+    performance and user experience.
+  </p>
 
-          <p className="text-[#4EC6F1] font-medium italic border-l-4 border-[#4EC6F1] pl-4 py-2 bg-[#4EC6F1]/5 rounded-r">
-            Specialized in RTL/LTR bilingual interfaces and turning design mockups into 
-            fully functional React applications.
-          </p>
-        </motion.div>
+  <p>
+    I enjoy designing intuitive interfaces, smooth user
+    experiences, and modern UI systems that work seamlessly
+    across desktop and mobile devices.
+  </p>
 
+  <div className="relative overflow-hidden rounded-2xl border border-[#4EC6F1]/20 bg-[#4EC6F1]/5 px-5 py-4">
+    <div className="absolute inset-0 bg-gradient-to-r from-[#4EC6F1]/10 to-transparent" />
+
+    <p className="relative z-10 text-[#4EC6F1] font-medium italic leading-7">
+      Specialized in RTL/LTR bilingual interfaces, modern
+      frontend architecture, and transforming UI/UX designs
+      into fully functional React applications.
+    </p>
+  </div>
+</motion.div>
         {/* Tabs Section */}
         <div className="mt-12">
           <TabsSection />

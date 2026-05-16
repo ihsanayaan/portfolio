@@ -45,7 +45,7 @@ const Contact = () => {
           viewport={{ once: true }}
           className="mb-12"
         >
-          <SectionHeading title="✉️ Get In Touch" />
+          <SectionHeading title="Get In Touch" />
         </motion.div>
 
         <div className="grid md:grid-cols-2 gap-12 items-start">
@@ -61,24 +61,9 @@ const Contact = () => {
             <h3 className="text-2xl font-bold text-white mb-4">
               Let's Build Something Amazing
             </h3>
-            <p className="text-gray-400 leading-relaxed">
-              I'm currently open to Product Designer & Frontend Developer roles in 
-              <span className="text-[#4EC6F1] font-semibold"> Riyadh, Jeddah & Remote KSA.</span>
-              Available for immediate relocation.
-            </p>
 
             {/* Contact Cards */}
             <div className="space-y-4 mt-8">
-              <div className="flex items-center gap-4 p-4 rounded-lg bg-[#1a1a1a] border border-gray-800 hover:border-[#4EC6F1]/50 transition-all">
-                <div className="p-3 bg-[#4EC6F1]/10 rounded-lg">
-                  <FaMapMarkerAlt className="text-[#4EC6F1] text-xl" />
-                </div>
-                <div>
-                  <p className="text-gray-400 text-sm">Location</p>
-                  <p className="text-white font-semibold">Islamabad, Pakistan → Riyadh, KSA</p>
-                </div>
-              </div>
-
               <div className="flex items-center gap-4 p-4 rounded-lg bg-[#1a1a1a] border border-gray-800 hover:border-[#4EC6F1]/50 transition-all">
                 <div className="p-3 bg-[#4EC6F1]/10 rounded-lg">
                   <FaEnvelope className="text-[#4EC6F1] text-xl" />
@@ -144,7 +129,7 @@ const Contact = () => {
               <input
                 type="text"
                 name="subject"
-                placeholder="Subject - e.g. Frontend Developer Role in Riyadh"
+                placeholder="Subject — Frontend / UI/UX Opportunity"
                 required
                 className="w-full px-4 py-3 rounded-lg bg-[#1a1a1a] border border-gray-800 text-gray-100 
                            focus:border-[#4EC6F1] focus:ring-1 focus:ring-[#4EC6F1] 
@@ -153,7 +138,7 @@ const Contact = () => {
               <textarea
                 name="message"
                 rows="5"
-                placeholder="Your Message - Tell me about the opportunity..."
+                placeholder="Your Message — Share project details, collaboration ideas, or job opportunities..."
                 required
                 className="w-full px-4 py-3 rounded-lg bg-[#1a1a1a] border border-gray-800 text-gray-100 
                            focus:border-[#4EC6F1] focus:ring-1 focus:ring-[#4EC6F1] 

@@ -19,6 +19,7 @@
     "react-scroll": "^1.9.3",
     "react-simple-typewriter": "^5.0.1",
     "react-tooltip": "^5.29.1",
+    "swiper": "^12.1.4",
     "web-vitals": "^2.1.4"
   },
   "scripts": {

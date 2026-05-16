@@ -100,7 +100,7 @@ const Experience = () => {
               <div className={`ml-16 md:ml-0 md:w-[calc(50%-3rem)] ${
                 index % 2 === 0? 'md:mr-auto md:pr-12' : 'md:ml-auto md:pl-12'
               }`}>
-                <div className="bg-[#1a1a1a] rounded-xl border border-gray-800 hover:border-[#4EC6F1]/50 transition-all duration-300 p-6 shadow-lg hover:shadow-[#4EC6F1]/10">
+                <div className="bg-white/5 backdrop-blur-xl rounded-xl border border-gray-800 hover:border-[#4EC6F1]/50 transition-all duration-300 p-6 shadow-lg hover:shadow-[#4EC6F1]/10">
                   
                   {exp.current && (
                     <div className="inline-block bg-[#10B981] text-white text-xs font-bold px-3 py-1 rounded-full mb-3">
