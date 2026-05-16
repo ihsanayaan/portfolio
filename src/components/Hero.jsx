@@ -2,7 +2,6 @@ import { Link } from "react-scroll";
 import { FaDownload, FaChevronDown } from "react-icons/fa";
 import { Typewriter } from "react-simple-typewriter";
 import { motion } from "framer-motion";
-
 const Hero = () => {
   return (
     <section
@@ -47,7 +46,6 @@ const Hero = () => {
           className="w-32 h-32 md:w-36 md:h-36 rounded-full object-cover object-top
                      mx-auto mb-6 border-4 border-white/10 hover:scale-105 transition-all duration-500"
         />
-
         {/* Name */}
         <motion.h1
           initial={{ opacity: 0, y: 10 }}
@@ -91,23 +89,6 @@ const Hero = () => {
         >
          I design and develop modern, responsive web applications with React.js and Figma. Specialized in clean UI/UX, bilingual RTL/LTR interfaces, and scalable frontend experiences for global users.
         </motion.p>
-       <div className="flex flex-wrap justify-center gap-3 mb-8">
-       {[
-        "React",
-        "Figma",
-        "Tailwind CSS",
-        "Framer Motion",
-        "RTL/LTR",
-        ].map((tech, index) => (
-       <span
-      key={index}
-      className="px-3 py-1 rounded-full bg-white/5 border border-white/10 text-[#4EC6F1] text-sm"
-    >
-           {tech}
-         </span>
-         ))}
-     </div>
-
         {/* Buttons - Clean */}
         <motion.div
           initial={{ opacity: 0, y: 10 }}
@@ -128,7 +109,6 @@ const Hero = () => {
             <FaDownload className="text-sm" />
             Download Resume
           </motion.a>
-
           {/* Hire Me Button */}
           <Link to="contact" smooth={true} offset={-80} duration={600}>
             <motion.button
@@ -143,7 +123,6 @@ const Hero = () => {
           </Link>
         </motion.div>
       </motion.div>
-
       {/* Scroll Down - Simple */}
       <Link
         to="about"
