@@ -1,5 +1,4 @@
 import { Link } from "react-scroll";
-import ParticlesBackground from "./ParticlesBackground";
 import TabsSection from "./TabsSection";
 import { FaDownload, FaChevronDown } from "react-icons/fa";
 import { Typewriter } from "react-simple-typewriter";
@@ -38,7 +37,6 @@ const Hero = () => {
         py-20 md:py-28
       "
     >
-      <ParticlesBackground />
       {/* Background Glow */}
       <div
         className="
