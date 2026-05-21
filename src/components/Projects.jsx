@@ -1,4 +1,6 @@
+import { useState } from 'react';
 import { motion } from 'framer-motion';
+
 import {
   FaFigma,
   FaGithub,
@@ -20,7 +22,8 @@ import 'swiper/css/pagination';
 
 import SectionHeading from '../components/SectionHeading';
 
-// ✅ PROJECTS DATA
+// ================= PROJECTS =================
+
 const projects = [
   {
     title: 'Healthcare Booking System',
@@ -42,7 +45,8 @@ const projects = [
       'Tailwind CSS',
     ],
     featured: true,
-    category: 'Low-Fidelity Design',
+    filter: ['Frontend', 'RTL/LTR', 'React'],
+    category: 'Featured Project',
   },
 
   {
@@ -62,6 +66,7 @@ const projects = [
       'Tailwind CSS',
       'Recharts',
     ],
+    filter: ['Frontend','RTL/LTR', 'React'],
   },
 
   {
@@ -75,234 +80,261 @@ const projects = [
       'Figma',
       'UI/UX',
       'Prototyping',
-      'Design System',
     ],
-    category: 'High-Fidelity Design',
-    status: 'Design Complete',
+    filter: ['UI/UX'],
   },
 
   {
-    title: 'Food Delivery App',
+    title: 'BrewBean Coffee Shop',
     description:
-      'Low-fidelity wireframes covering restaurant browsing, cart management, order tracking, and checkout flow.',
-    imageEn: '/project-food-wireframe.png',
-    figma:
-      'https://www.figma.com/design/s1R9GBrolNccO1Ia0qSY5U/Restaurants?node-id=1-45&t=YfHUdtIBnS12OSz5-1',
+      'Modern coffee shop with bilingual RTL/LTR support and responsive React experience.',
+    imageEn: '/project-coffee-en.png',
+    imageAr: '/project-coffee-ar.png',
+    demo:
+      'https://coffee-shop-one-woad.vercel.app/',
+    code:
+      'https://github.com/ihsanayaan/coffee-shop.git',
     tech: [
-      'Figma',
-      'Wireframing',
-      'User Flows',
-      'UX Research',
+      'React',
+      'Tailwind CSS',
+      'i18next',
     ],
-    category: 'Low-Fidelity Wireframe',
-    status: 'Wireframe Phase',
+    filter: ['Frontend', 'RTL/LTR', 'React'],
   },
+
   {
-  title: 'BrewBean Coffee Shop',
+    title: 'AI Resume Analyzer',
+    description:
+      'Modern AI resume analyzer with OpenAI integration and clean UX.',
+    imageEn: '/project7.png',
+    demo:
+      'https://ai-resume-analyzer-red.vercel.app/',
+    code:
+      'https://github.com/ihsanayaan/ai-resume-analyzer.git',
+    tech: [
+      'React',
+      'OpenAI API',
+      'Tailwind CSS',
+    ],
+    filter: ['Frontend', 'React'],
+  },
+{
+  title: 'Food Delivery App',
   description:
-    'Modern coffee shop with dynamic menu and bilingual RTL/LTR support. Designed complete Figma prototypes with component variants before building responsive React app with cart persistence.',
-  imageEn: '/project-coffee-en.png',
-  imageAr: '/project-coffee-ar.png',
-  demo: 'https://coffee-shop-one-woad.vercel.app/',
-  code: 'https://github.com/ihsanayaan/coffee-shop.git',
+    'Modern food delivery application focused on user-friendly ordering experience, restaurant browsing, cart management, and smooth checkout flows. Designed complete wireframes and responsive UI screens in Figma before development.',
+  imageEn: '/project-food-wireframe.png',
+  figma:
+    'https://www.figma.com/design/s1R9GBrolNccO1Ia0qSY5U/Restaurants?node-id=1-45&t=YfHUdtIBnS12OSz5-1',
   tech: [
     'Figma',
-    'React',
-    'Context API',
-    'Tailwind CSS',
-    'i18next',
+    'Wireframing',
+    'UX Research',
+    'Responsive Design',
   ],
+  filter: ['UI/UX'],
+  status: 'Design Phase',
 },
 
 {
   title: 'CourseHub - E-Learning Platform',
   description:
-    'Full-featured online learning platform with course browsing, video lessons, and certificate generation. Designed complete user flows and high-fidelity screens in Figma.',
+    'Modern e-learning platform with course browsing, lesson management, responsive dashboards, and interactive student experience. Designed complete high-fidelity UI system in Figma before frontend development.',
   imageEn: '/project14.png',
   demo: 'https://coursehub-react.vercel.app/',
   code:
     'https://github.com/ihsanayaan/coursehub-react.git',
   tech: [
-    'Figma',
     'React',
+    'Tailwind CSS',
     'Context API',
-    'Tailwind CSS',
-  ],
-},
-
-{
-  title: 'AI Resume Analyzer',
-  description:
-    'Intelligent web app that analyzes resumes using AI. Designed clean, modern UI in Figma with focus on UX, then developed with React and OpenAI integration.',
-  imageEn: '/project7.png',
-  demo:
-    'https://ai-resume-analyzer-red.vercel.app/',
-  code:
-    'https://github.com/ihsanayaan/ai-resume-analyzer.git',
-  tech: [
     'Figma',
-    'React',
-    'OpenAI API',
-    'Tailwind CSS',
   ],
-},
-
-{
-  title: 'AI ChatBot App',
-  description:
-    'Modern conversational AI chatbot with voice input and theme toggle. Designed conversational UI patterns and chat interface in Figma before development.',
-  imageEn: '/project5.png',
-  demo:
-    'https://ai-chatbot-app-vert.vercel.app/',
-  code:
-    'https://github.com/ihsanayaan/ai-chatbot-app.git',
-  tech: [
-    'Figma',
-    'React',
-    'Web Speech API',
-    'Tailwind CSS',
-  ],
+  filter: ['Frontend', 'React'],
 },
 
 {
   title: 'E-Commerce Platform',
   description:
-    'Full-stack e-commerce solution with Stripe payments and admin dashboard. Created complete design system and component library in Figma, then built with React + Firebase.',
+    'Modern e-commerce platform with product listings, shopping cart, responsive UI, and scalable frontend architecture. Designed complete design system and reusable UI components before development.',
   imageEn: '/project2.png',
   demo:
     'https://ecommerce-platform-qrnn-132j7qral-ihsan-ayaans-projects.vercel.app/',
   code:
     'https://github.com/ihsanayaan/ecommerce-platform.git',
   tech: [
-    'Figma',
     'React',
     'Redux',
+    'Tailwind CSS',
+    'Figma',
   ],
+  filter: ['Frontend', 'React'],
 },
+  {
+    title: 'AI ChatBot App',
+    description:
+      'Conversational AI chatbot with voice input and modern UI patterns.',
+    imageEn: '/project5.png',
+    demo:
+      'https://ai-chatbot-app-vert.vercel.app/',
+    code:
+      'https://github.com/ihsanayaan/ai-chatbot-app.git',
+    tech: [
+      'React',
+      'Web Speech API',
+      'Tailwind CSS',
+    ],
+    filter: ['Frontend', 'React'],
+  },
 ];
 
-// ✅ PROJECT CARD
-const ProjectCard = ({ project, index }) => {
+// ================= CARD =================
+
+const ProjectCard = ({ project }) => {
   const hasDualImages =
     project.imageAr && project.imageEn;
 
   return (
     <motion.div
-      initial={{ opacity: 0, y: 30 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      whileHover={{ y: -8, scale: 1.02 }}
-      transition={{
-        duration: 0.4,
-        delay: index * 0.08,
+      whileHover={{
+        y: -10,
+        rotateX: 4,
+        rotateY: -4,
       }}
-      viewport={{ once: true, amount: 0.2 }}
+      transition={{ duration: 0.35 }}
       className="
-        group
-        relative
-        overflow-hidden
-        rounded-2xl
-        bg-white/5
-        backdrop-blur-xl
-        border
-        border-white/10
-        hover:border-[#4EC6F1]/40
-        transition-all
-        duration-500
-        flex
-        flex-col
+      group
+      relative
+      overflow-hidden
+      rounded-3xl
+      bg-white/[0.03]
+      border border-white/10
+      backdrop-blur-xl
+      hover:border-[#4EC6F1]/40
+      transition-all duration-500
       "
+      style={{
+        transformStyle: 'preserve-3d',
+      }}
     >
-      {/* Glow */}
-      <div className="absolute inset-0 bg-gradient-to-r from-[#4EC6F1]/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-0" />
+      {/* Animated Glow */}
+      <div
+        className="
+        absolute inset-0 opacity-0 group-hover:opacity-100
+        transition duration-500
+        bg-gradient-to-r from-[#4EC6F1]/10 via-[#6C63FF]/10 to-[#FF6FD8]/10
+      "
+      />
 
-      {/* Badges */}
-      <div className="absolute top-4 left-4 z-20 flex gap-2 flex-wrap">
-        {project.featured && (
-          <div className="bg-[#4EC6F1] text-white text-xs font-bold px-3 py-1 rounded-full">
-            FEATURED
-          </div>
-        )}
+      {/* Animated Border */}
+      <div
+        className="
+        absolute inset-0 rounded-3xl
+        border border-transparent
+        group-hover:border-[#4EC6F1]/40
+        transition-all duration-500
+      "
+      />
 
-        {project.category && (
-          <div className="bg-[#232323] text-white text-xs font-semibold px-3 py-1 rounded-full">
-            {project.category}
-          </div>
-        )}
-      </div>
-
-      {/* Status */}
-      {project.status && (
-        <div className="absolute top-4 right-4 z-20 bg-yellow-400 text-black text-xs font-bold px-3 py-1 rounded-full">
-          {project.status}
-        </div>
-      )}
-
-      {/* Image */}
-      <div className="relative w-full h-56 overflow-hidden">
+      {/* IMAGE */}
+      <div className="relative h-60 overflow-hidden">
         <img
           src={project.imageEn}
           alt={project.title}
-          className={`w-full h-full object-cover transition-all duration-700 group-hover:scale-110 ${
+          className={`
+          w-full h-full object-cover
+          transition-all duration-700
+          group-hover:scale-110
+          ${
             hasDualImages
               ? 'group-hover:opacity-0'
               : ''
-          }`}
+          }
+          `}
         />
 
         {hasDualImages && (
           <img
             src={project.imageAr}
             alt={project.title}
-            className="absolute inset-0 w-full h-full object-cover opacity-0 group-hover:opacity-100 transition-all duration-700 group-hover:scale-110"
+            className="
+            absolute inset-0 w-full h-full object-cover
+            opacity-0 group-hover:opacity-100
+            transition-all duration-700
+            group-hover:scale-110
+          "
           />
         )}
 
+        {/* Overlay */}
         <div className="absolute inset-0 bg-gradient-to-t from-[#0D0D0D] via-transparent to-transparent" />
 
-        {/* RTL Badge */}
-        {hasDualImages && (
-          <div className="absolute bottom-4 left-4 bg-black/70 backdrop-blur-md text-white text-xs px-3 py-1.5 rounded-lg font-medium z-20">
-            <span className="group-hover:hidden">
-              🇬🇧 EN
+        {/* Category */}
+        {project.category && (
+          <div className="absolute top-4 left-4 z-20">
+            <span className="bg-[#4EC6F1] text-white text-xs font-bold px-3 py-1 rounded-full">
+              {project.category}
             </span>
+          </div>
+        )}
 
-            <span className="hidden group-hover:inline">
-              🇸🇦 AR
-            </span>
+        {/* RTL */}
+        {hasDualImages && (
+          <div className="absolute bottom-4 left-4 z-20 bg-black/60 backdrop-blur-md px-3 py-1 rounded-lg text-xs text-white">
+            RTL / LTR
           </div>
         )}
       </div>
 
-      {/* Content */}
-      <div className="p-6 flex flex-col flex-grow relative z-10">
-        <h3 className="text-2xl font-bold text-white mb-3 group-hover:text-[#4EC6F1] transition-colors duration-300">
+      {/* CONTENT */}
+      <div className="p-6 relative z-10">
+        <h3
+          className="
+          text-2xl font-bold text-white mb-3
+          group-hover:text-[#4EC6F1]
+          transition-colors duration-300
+        "
+        >
           {project.title}
         </h3>
 
-        <p className="text-[15px] leading-7 text-gray-300 mb-5 flex-grow">
+        <p className="text-gray-400 leading-7 text-sm mb-5">
           {project.description}
         </p>
 
-        {/* Tech */}
-        <div className="flex flex-wrap gap-2 mb-5">
-          {project.tech?.map((tech, i) => (
+        {/* TECH */}
+        <div className="flex flex-wrap gap-2 mb-6">
+          {project.tech?.map((item, index) => (
             <span
-              key={i}
-              className="text-xs px-3 py-1 rounded-full bg-[#111] border border-white/10 text-[#4EC6F1]"
+              key={index}
+              className="
+              px-3 py-1 rounded-full
+              bg-[#111]
+              border border-white/10
+              text-[#4EC6F1]
+              text-xs
+            "
             >
-              {tech}
+              {item}
             </span>
           ))}
         </div>
 
-        {/* Buttons */}
-        <div className="flex flex-col sm:flex-row gap-3 mt-auto">
+        {/* BUTTONS */}
+        <div className="flex gap-3 flex-wrap">
           {project.demo && (
             <a
               href={project.demo}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex-1 text-center px-4 py-3 rounded-xl bg-[#4EC6F1] hover:bg-[#39b4df] text-white font-semibold text-sm transition-all duration-300 flex items-center justify-center gap-2"
+              className="
+              flex-1 min-w-[120px]
+              flex items-center justify-center gap-2
+              px-4 py-3 rounded-xl
+              bg-gradient-to-r from-[#4EC6F1] to-[#6C63FF]
+              hover:scale-[1.02]
+              transition-all duration-300
+              text-white text-sm font-semibold
+            "
             >
               <FaExternalLinkAlt />
               Live Demo
@@ -314,7 +346,14 @@ const ProjectCard = ({ project, index }) => {
               href={project.figma}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex-1 text-center px-4 py-3 rounded-xl bg-[#242424] hover:bg-[#2d2d2d] text-white font-semibold text-sm transition-all duration-300 flex items-center justify-center gap-2 border border-white/10"
+              className="
+              flex items-center justify-center gap-2
+              px-4 py-3 rounded-xl
+              border border-white/10
+              hover:border-[#4EC6F1]/40
+              text-white text-sm font-semibold
+              transition-all duration-300
+            "
             >
               <FaFigma />
               Figma
@@ -326,7 +365,14 @@ const ProjectCard = ({ project, index }) => {
               href={project.code}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex-1 text-center px-4 py-3 rounded-xl border border-white/10 hover:border-[#4EC6F1] hover:text-[#4EC6F1] text-gray-300 font-semibold text-sm transition-all duration-300 flex items-center justify-center gap-2"
+              className="
+              flex items-center justify-center gap-2
+              px-4 py-3 rounded-xl
+              border border-white/10
+              hover:border-[#4EC6F1]/40
+              text-white text-sm font-semibold
+              transition-all duration-300
+            "
             >
               <FaGithub />
               Code
@@ -338,36 +384,100 @@ const ProjectCard = ({ project, index }) => {
   );
 };
 
-// ✅ MAIN COMPONENT
+// ================= MAIN =================
+
+const filters = [
+  'All',
+  'UI/UX',
+  'Frontend',
+  'RTL/LTR',
+  'React',
+];
+
 const Projects = () => {
+  const [activeFilter, setActiveFilter] =
+    useState('All');
+
+  const featuredProject = projects.find(
+    (p) => p.featured
+  );
+
+  const filteredProjects =
+    activeFilter === 'All'
+      ? projects.filter((p) => !p.featured)
+      : projects.filter(
+          (p) =>
+            !p.featured &&
+            p.filter?.includes(activeFilter)
+        );
+
   return (
     <section
       id="projects"
-      className="scroll-mt-24 bg-[#0D0D0D] px-4 md:px-6 py-20"
+      className="
+      scroll-mt-24
+      bg-[#0D0D0D]
+      px-4 md:px-6
+      py-24
+    "
     >
-      <div className="max-w-[1400px] mx-auto">
-        <SectionHeading title="Design + Development Projects" />
+      <div className="max-w-[1450px] mx-auto">
+
+        <SectionHeading title="Featured Projects" />
 
         <motion.p
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
-          className="text-center text-gray-400 mt-4 mb-14 max-w-3xl mx-auto leading-8"
+          className="
+          text-center text-gray-400
+          mt-4 mb-14
+          max-w-3xl mx-auto
+          leading-8
+        "
         >
-          End-to-end projects from wireframes to
-          production-ready applications with modern UI,
-          responsive UX, RTL/LTR support, and scalable
-          frontend architecture.
+          Modern UI/UX + Frontend projects with
+          responsive design, RTL/LTR support,
+          scalable architecture, and premium user
+          experiences.
         </motion.p>
+
+        {/* FEATURED PROJECT */}
+        <div className="mb-20">
+          <ProjectCard project={featuredProject} />
+        </div>
+
+        {/* FILTERS */}
+        <div className="flex flex-wrap justify-center gap-3 mb-12">
+          {filters.map((filter) => (
+            <button
+              key={filter}
+              onClick={() =>
+                setActiveFilter(filter)
+              }
+              className={`
+              px-5 py-2.5 rounded-xl text-sm font-medium
+              transition-all duration-300
+              ${
+                activeFilter === filter
+                  ? 'bg-gradient-to-r from-[#4EC6F1] to-[#6C63FF] text-white'
+                  : 'bg-white/[0.03] border border-white/10 text-gray-400 hover:text-white'
+              }
+              `}
+            >
+              {filter}
+            </button>
+          ))}
+        </div>
 
         {/* SLIDER */}
         <Swiper
           modules={[Autoplay, Pagination]}
           spaceBetween={28}
           slidesPerView={1}
-          loop={true}
+          loop
           autoplay={{
-            delay: 4500,
+            delay: 4000,
             disableOnInteraction: false,
           }}
           pagination={{ clickable: true }}
@@ -379,16 +489,17 @@ const Projects = () => {
               slidesPerView: 3,
             },
           }}
-          className="pb-14"
+          className="pb-16"
         >
-          {projects.map((project, index) => (
-            <SwiperSlide key={index}>
-              <ProjectCard
-                project={project}
-                index={index}
-              />
-            </SwiperSlide>
-          ))}
+          {filteredProjects.map(
+            (project, index) => (
+              <SwiperSlide key={index}>
+                <ProjectCard
+                  project={project}
+                />
+              </SwiperSlide>
+            )
+          )}
         </Swiper>
       </div>
     </section>

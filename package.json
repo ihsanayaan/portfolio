@@ -19,7 +19,9 @@
     "react-scroll": "^1.9.3",
     "react-simple-typewriter": "^5.0.1",
     "react-tooltip": "^5.29.1",
+    "react-tsparticles": "^2.12.2",
     "swiper": "^12.1.4",
+    "tsparticles": "^4.0.5",
     "web-vitals": "^2.1.4"
   },
   "scripts": {
