@@ -1,70 +1,92 @@
-# Getting Started with Create React App
+#  Ihsan Ali — Frontend Developer & UI/UX Designer Portfolio
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Modern personal portfolio website built with React.js, Tailwind CSS, and Framer Motion showcasing frontend development and UI/UX design projects.
 
-## Available Scripts
+##  Live Portfolio
+🔗 https://iamruiux.vercel.app/
 
-In the project directory, you can run:
+---
 
-### `npm start`
+#  Features
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- Modern responsive UI
+- Smooth animations with Framer Motion
+- Mobile-first design
+- RTL/LTR bilingual interface showcase
+- Interactive project cards
+- UI/UX design portfolio
+- Education & certifications timeline
+- Experience timeline
+- Glassmorphism navbar
+- Smooth scrolling navigation
+- Recruiter-friendly layout
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+---
 
-### `npm test`
+#  Tech Stack
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Frontend
+- React.js
+- JavaScript
+- Tailwind CSS
+- Framer Motion
 
-### `npm run build`
+## UI/UX
+- Figma
+- Canva
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Additional Tools
+- React Icons
+- React Scroll
+- React Simple Typewriter
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+---
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+#  Featured Projects
 
-### `npm run eject`
+##  Healthcare Booking System
+Modern bilingual healthcare platform with RTL/LTR support, appointment booking, multilingual interface, and responsive design.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+##  AI Admin Dashboard
+AI-powered admin dashboard with analytics charts, reusable UI components, and modern dashboard UI.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+##  BrewBean Coffee Shop
+Modern coffee shop application with bilingual support and responsive user experience.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+##  AI Resume Analyzer
+AI-powered resume analysis application with modern UI and responsive layouts.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+##  E-Commerce Platform
+Responsive e-commerce platform with modern UI and scalable frontend architecture.
 
-## Learn More
+---
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+#  Design Process
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+My workflow starts with:
+1. Wireframing
+2. User Flow Design
+3. High-Fidelity UI Design in Figma
+4. Responsive Frontend Development
+5. Performance Optimization
 
-### Code Splitting
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+#  Responsive Design
 
-### Analyzing the Bundle Size
+Fully optimized for:
+- Mobile Devices
+- Tablets
+- Laptops
+- Desktop Screens
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+---
+Author
+Ihsan Ali
+Frontend Developer & UI/UX Designer
 
-### Making a Progressive Web App
+#  Installation
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+```bash
+npm install
+npm start 
