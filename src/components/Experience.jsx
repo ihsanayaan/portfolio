@@ -2,7 +2,6 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import {
   FaLaptopCode,
-  FaCheckCircle,
   FaFigma,
   FaCode,
 } from 'react-icons/fa';
