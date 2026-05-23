@@ -1,12 +1,12 @@
 import { Link } from "react-scroll";
 import TabsSection from "./Skills";
-import { FaDownload, FaChevronDown } from "react-icons/fa";
+import { FaDownload } from "react-icons/fa";
 import { Typewriter } from "react-simple-typewriter";
 import { motion, AnimatePresence } from "framer-motion";
 import { useState } from "react";
 
 const Hero = () => {
-  const [showSkills, setShowSkills] = useState(false);
+  const [setShowSkills] = useState(false);
   const topSkills = [
     "React.js",
     "Tailwind CSS",

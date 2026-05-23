@@ -1,6 +1,5 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
-import { FaFigma, FaGithub, FaExternalLinkAlt } from 'react-icons/fa';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay, Pagination } from 'swiper/modules';
 import 'swiper/css';
@@ -198,6 +197,7 @@ const ProjectCard = ({ project }) => {
             <a
               href={project.demo}
               target="_blank"
+              rel="noopener noreferrer"
               className="px-4 py-2 rounded-xl bg-gradient-to-r from-[#4EC6F1] to-[#6C63FF] text-white text-xs font-semibold hover:scale-[1.03] transition whitespace-nowrap"
             >
               View Live
@@ -208,6 +208,7 @@ const ProjectCard = ({ project }) => {
             <a
               href={project.figma}
               target="_blank"
+              rel="noopener noreferrer"
               className="px-4 py-2 rounded-xl bg-white/[0.03] border border-white/10 text-white text-xs font-semibold hover:border-[#4EC6F1]/50 transition whitespace-nowrap"
             >
               Figma
@@ -218,6 +219,7 @@ const ProjectCard = ({ project }) => {
             <a
               href={project.code}
               target="_blank"
+              rel="noopener noreferrer"
               className="px-4 py-2 rounded-xl bg-white/[0.03] border border-white/10 text-white text-xs font-semibold hover:border-[#4EC6F1]/50 transition whitespace-nowrap"
             >
               Code
