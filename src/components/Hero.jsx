@@ -6,7 +6,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { useState } from "react";
 
 const Hero = () => {
-  const [setShowSkills] = useState(false);
+  const [showSkills] = useState(false);
   const topSkills = [
     "React.js",
     "Tailwind CSS",

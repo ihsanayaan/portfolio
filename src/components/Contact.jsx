@@ -111,7 +111,8 @@ const Contact = () => {
                 <FaWhatsapp className="text-[#10B981] text-xl" />
                 <div>
                   <p className="text-gray-400 text-xs">WhatsApp</p>
-                  <a href="https://wa.me/923444947537" target="_blank" rel="noopener noreferrer" className="text-white font-semibold hover:text-[#10B981]">
+                  <a href="https://wa.me/923444947537" target="_blank" 
+                  rel="noopener noreferrer" className="text-white font-semibold hover:text-[#10B981]">
                     +92 344 4947537
                   </a>
                 </div>
