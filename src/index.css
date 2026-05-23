@@ -1,6 +1,9 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+html, body {
+  overflow-x: hidden;
+}
 html {
   scroll-behavior: smooth;
 }
@@ -18,4 +21,144 @@ html {
 
 .animate-gradient {
   animation: gradient 5s ease infinite;
+}
+
+.stars-small,
+.stars-medium,
+.stars-big {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.stars-small::after,
+.stars-medium::after,
+.stars-big::after {
+  content: "";
+  position: absolute;
+  inset: -2000px;
+  background-repeat: repeat;
+  animation: animateStars linear infinite;
+}
+
+/* Base stars */
+.stars-small,
+.stars-medium,
+.stars-big {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.stars-small::after,
+.stars-medium::after,
+.stars-big::after {
+  content: "";
+  position: absolute;
+  inset: -2000px;
+  background-repeat: repeat;
+  animation: animateStars linear infinite, twinkle ease-in-out infinite alternate;
+}
+
+/* Small Stars - zyada dense + fast twinkle */
+.stars-small::after {
+  background-image:
+    radial-gradient(1px 1px at 20px 30px, #fff, transparent),
+    radial-gradient(1px 1px at 120px 80px, #4EC6F1, transparent),
+    radial-gradient(2px 2px at 250px 150px, #fff, transparent),
+    radial-gradient(1px 1px at 400px 200px, #fff, transparent),
+    radial-gradient(2px 2px at 550px 350px, #4EC6F1, transparent),
+    radial-gradient(1px 1px at 700px 500px, #fff, transparent),
+    radial-gradient(2px 2px at 900px 650px, #fff, transparent),
+    radial-gradient(1px 1px at 50px 600px, #fff, transparent),
+    radial-gradient(1px 1px at 200px 750px, #4EC6F1, transparent),
+    radial-gradient(2px 2px at 350px 900px, #fff, transparent),
+    radial-gradient(1px 1px at 500px 50px, #fff, transparent),
+    radial-gradient(2px 2px at 650px 250px, #4EC6F1, transparent),
+    radial-gradient(1px 1px at 800px 450px, #fff, transparent),
+    radial-gradient(1px 1px at 950px 850px, #fff, transparent),
+    radial-gradient(2px 2px at 1100px 100px, #4EC6F1, transparent);
+  background-size: 1200px 1200px;
+  opacity: 0.85;
+  animation-duration: 100s, 2s;
+}
+
+/* Medium Stars - medium twinkle */
+.stars-medium::after {
+  background-image:
+    radial-gradient(2px 2px at 100px 100px, #fff, transparent),
+    radial-gradient(3px 3px at 300px 200px, #4EC6F1, transparent),
+    radial-gradient(2px 2px at 600px 400px, #fff, transparent),
+    radial-gradient(3px 3px at 900px 700px, #fff, transparent),
+    radial-gradient(2px 2px at 50px 500px, #fff, transparent),
+    radial-gradient(3px 3px at 400px 850px, #4EC6F1, transparent),
+    radial-gradient(2px 2px at 750px 150px, #fff, transparent),
+    radial-gradient(3px 3px at 1050px 600px, #fff, transparent),
+    radial-gradient(2px 2px at 1200px 300px, #4EC6F1, transparent);
+  background-size: 1400px 1400px;
+  opacity: 0.65;
+  animation-duration: 150s, 3s;
+}
+
+/* Big Stars - slow twinkle */
+.stars-big::after {
+  background-image:
+    radial-gradient(4px 4px at 200px 150px, #fff, transparent),
+    radial-gradient(3px 3px at 700px 500px, #4EC6F1, transparent),
+    radial-gradient(4px 4px at 1000px 800px, #fff, transparent),
+    radial-gradient(3px 3px at 300px 900px, #6C63FF, transparent),
+    radial-gradient(4px 4px at 850px 200px, #fff, transparent),
+    radial-gradient(3px 3px at 1150px 650px, #6C63FF, transparent);
+  background-size: 1600px 1600px;
+  opacity: 0.5;
+  animation-duration: 200s, 4s;
+}
+
+/* Moving stars down */
+@keyframes animateStars {
+  from { transform: translateY(0); }
+  to { transform: translateY(1000px); }
+}
+
+/* Twinkling effect */
+@keyframes twinkle {
+ 0% { opacity: 0.3; }
+ 50% { opacity: 1; }
+ 100% { opacity: 0.3; }
+}
+
+@keyframes animateStars {
+  from {
+    transform: translateY(0);
+  }
+
+  to {
+    transform: translateY(1000px);
+  }
+}
+.marquee {
+  width: max-content;
+  animation: marqueeMove 28s linear infinite;
+}
+
+@keyframes marqueeMove {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-50%);
+  }
+}
+@keyframes marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.animate-marquee {
+  animation: marquee 14s linear infinite;
 }

@@ -135,8 +135,7 @@ const Education = () => {
   return (
     <section
       id="education"
-      className="scroll-mt-24 bg-[#0D0D0D]
-      px-4 md:px-6 py-20 overflow-hidden"
+      className="scroll-mt-24 bg-transparent md:px-6 py-20 overflow-hidden"
     >
       <div className="max-w-6xl mx-auto">
 

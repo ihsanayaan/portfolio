@@ -58,7 +58,7 @@ const Experience = () => {
   return (
     <section
       id="experience"
-      className="pt-24 scroll-mt-24 bg-[#0D0D0D] px-4 md:px-6 py-20 border-t border-[#4EC6F1]/10 relative overflow-hidden"
+      className="pt-24 scroll-mt-24 bg-transparent px-4 md:px-6 py-20 border-t border-[#4EC6F1]/10 relative overflow-hidden"
     >
       {/* Background Glow */}
       <div
@@ -79,13 +79,10 @@ const Experience = () => {
           className="text-center space-y-5"
         >
           <h2 className="text-4xl md:text-5xl font-bold text-white">
-            Professional{" "}
-            <span className="bg-gradient-to-r from-[#4EC6F1] to-[#6C63FF] bg-clip-text text-transparent">
-              Experience
-            </span>
+            Professional Experience
           </h2>
 
-          <div className="w-28 h-1.5 bg-gradient-to-r from-[#4EC6F1] to-[#6C63FF] mx-auto rounded-full" />
+          <div className="w-28 h-1.5 bg-gradient-to-r from-[#4EC6F1] via-white to-[#6C63FF] mx-auto rounded-full" />
 
           <p className="text-gray-400 max-w-2xl mx-auto leading-8 text-sm md:text-base">
             Frontend React Developer and UI/UX Designer specializing in
