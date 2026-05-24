@@ -237,11 +237,12 @@ const Experience = () => {
                           className="
                           px-3.5 py-2
                           rounded-xl
-                          bg-[#0D0D0D]
+                          bg-white/[0.03]
                           border border-white/10
-                          text-[#4EC6F1]
-                          text-xs md:text-sm
-                          font-medium
+
+                      text-gray-300
+                      text-xs md:text-sm
+                      font-medium
                           hover:border-[#4EC6F1]/40
                           transition-all duration-300
                         "

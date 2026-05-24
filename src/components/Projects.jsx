@@ -183,7 +183,7 @@ const ProjectCard = ({ project }) => {
           {project.tech?.map((t, i) => (
             <span
               key={i}
-              className="text-[11px] px-3 py-1 rounded-full bg-white/[0.03] border border-white/10 text-[#4EC6F1]"
+              className="text-[11px] px-3 py-1 rounded-full bg-white/[0.03] border border-white/10 text-gray-300"
             >
               {t}
             </span>

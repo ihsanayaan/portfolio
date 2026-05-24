@@ -454,12 +454,10 @@ const Education = () => {
                                 text-xs
                                 px-3 py-2
                                 rounded-xl
-                                bg-[#111]
-                                text-[#4EC6F1]
+                                bg-white/[0.03]
                                 border border-white/10
+                               text-gray-300
                                 flex items-center gap-1.5
-                                hover:border-[#4EC6F1]/40
-                                hover:bg-[#131313]
                                 transition-all duration-300
                                 "
                               >

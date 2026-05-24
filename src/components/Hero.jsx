@@ -161,7 +161,7 @@ const Hero = () => {
               </span>
 
               <span className="text-[#10B981] text-xs sm:text-sm font-medium">
-                Open to Remote Opportunities
+                Open to Remote Opportunities Worldwide
               </span>
             </div>
 
@@ -426,7 +426,6 @@ const Hero = () => {
     </Link>
   ))}
 </div>
-        
           </motion.div>
 
           {/* RIGHT */}

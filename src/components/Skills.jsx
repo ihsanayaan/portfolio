@@ -157,10 +157,8 @@ const Skills = () => {
                       px-3 py-1.5
                       rounded-full
 
-                      bg-[#111]/80
-                      backdrop-blur-md
-
-                      border border-white/10
+                     bg-white/[0.03]
+                          border border-white/10
 
                       text-gray-300
                       text-xs md:text-sm
@@ -168,7 +166,7 @@ const Skills = () => {
 
                       hover:border-[#4EC6F1]/40
                       hover:text-white
-                      hover:bg-[#151515]
+                    
 
                       transition-all duration-300
                     "
