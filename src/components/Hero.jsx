@@ -329,109 +329,104 @@ const Hero = () => {
                 </motion.button>
               </Link>
             </div>
+{/* Stats */}
+<div className="grid grid-cols-2 sm:grid-cols-4 gap-3 mt-6">
 
-            {/* Stats */}
-            <div className="grid grid-cols-2 gap-3 mt-8">
+  {stats.map((item, i) => (
+    <Link
+      key={i}
+      to={item.link}
+      smooth={true}
+      offset={-80}
+      duration={600}
+    >
+      <motion.div
+        whileHover={{
+          y: -6,
+          scale: 1.03,
+        }}
+        className="
+          group
+          relative
+          overflow-hidden
+          cursor-pointer
 
-              {stats.map((item, i) => (
-                <Link
-                  key={i}
-                  to={item.link}
-                  smooth={true}
-                  offset={-80}
-                  duration={600}
-                >
-                  <motion.div
-                    whileHover={{
-                      y: -5,
-                      scale: 1.02,
-                    }}
-                    className="
-                      group
-                      relative
-                      overflow-hidden
+          bg-white/[0.04]
+          backdrop-blur-2xl
 
-                      cursor-pointer
+          border-white/10
+          rounded-2xl
 
-                      bg-white/[0.03]
-                      backdrop-blur-xl
+          px-3 py-4 
+          sm:px-4 sm:py-5
 
-                      border border-white/10
-                      rounded-3xl
+          text-center
 
-                      p-5
-                      text-center
+          hover:border-[#4EC6F1]/40
+          hover:shadow-[0_0_40px_rgba(78,198,241,0.12)]
 
-                      hover:border-[#4EC6F1]/40
+          transition-all duration-500
+        "
+      >
+        {/* Premium Glow */}
+        <div
+          className="
+            absolute inset-0
+            opacity-0
+            group-hover:opacity-100
+            transition duration-500
+            bg-gradient-to-r
+            from-[#4EC6F1]/10
+            via-[#6C63FF]/10
+            to-[#FF6FD8]/10
+          "
+        />
 
-                      transition-all duration-500
-                    "
-                  >
-                    {/* Premium Glow */}
-                    <div
-                      className="
-                        absolute inset-0
+        {/* Border Layer */}
+        <div
+          className="
+            absolute inset-0
+            rounded-2xl
+            border-transparent
+            group-hover:border-[#4EC6F1]/30
+            transition-all duration-500
+          "
+        />
 
-                        opacity-0
-                        group-hover:opacity-100
+        {/* Number */}
+        <h4
+          className="
+            relative z-10
+            text-2xl sm:text-3xl
+            font-bold
+            bg-gradient-to-r
+            from-[#4EC6F1]
+            via-white
+            to-[#6C63FF]
+            bg-clip-text
+            text-transparent
+          "
+        >
+          {item.value}
+        </h4>
 
-                        transition duration-500
-
-                        bg-gradient-to-r
-                        from-[#4EC6F1]/10
-                        via-[#6C63FF]/10
-                        to-[#FF6FD8]/10
-                      "
-                    />
-
-                    {/* Border */}
-                    <div
-                      className="
-                        absolute inset-0
-                        rounded-3xl
-
-                        border border-transparent
-
-                        group-hover:border-[#4EC6F1]/30
-
-                        transition-all duration-500
-                      "
-                    />
-
-                    <h4
-                      className="
-                        relative z-10
-
-                        text-2xl md:text-3xl
-                        font-black
-
-                        bg-gradient-to-r
-                        from-[#4EC6F1]
-                        to-[#6C63FF]
-
-                        bg-clip-text
-                        text-transparent
-                      "
-                    >
-                      {item.value}
-                    </h4>
-
-                    <p
-                      className="
-                        relative z-10
-
-                        text-gray-400
-                        text-xs md:text-sm
-
-                        mt-1
-                      "
-                    >
-                      {item.label}
-                    </p>
-                  </motion.div>
-                </Link>
-              ))}
-            </div>
+        {/* Label */}
+        <p
+          className="
+            relative z-10
+            text-gray-400
+            text-xs
+            font-medium
+            mt-1.5
+          "
+        >
+          {item.label}
+        </p>
+      </motion.div>
+    </Link>
+  ))}
+</div>
+        
           </motion.div>
 
           {/* RIGHT */}
@@ -455,9 +450,6 @@ const Hero = () => {
               className="
                 bg-white/[0.03]
                 backdrop-blur-2xl
-
-                border border-white/10
-
                 rounded-3xl
 
                 p-6
@@ -484,9 +476,6 @@ const Hero = () => {
               className="
                 bg-white/[0.03]
                 backdrop-blur-2xl
-
-                border border-white/10
-
                 rounded-3xl
 
                 p-6
