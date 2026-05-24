@@ -19,23 +19,93 @@ const App = () => {
     const timer = setTimeout(() => {
       setLoading(false);
     }, 2800);
+
     return () => clearTimeout(timer);
   }, []);
 
   return (
     <>
-      <AnimatePresence>
+      {/* Loader */}
+      <AnimatePresence mode="wait">
         {loading && <Loader key="loader" />}
       </AnimatePresence>
 
+      {/* Main Portfolio */}
       {!loading && (
-        <div className="relative min-h-screen overflow-hidden bg-[#070B14] text-white font-sans">
-          
-          {/* Premium Stars Background */}
-          <StarsBackground />
+        <div
+          className="
+            relative
+            min-h-screen
+            overflow-hidden
+            bg-[#050816]
+            text-white
+            font-sans
+          "
+        >
+          {/* Premium Animated Stars Background */}
+          <div className="fixed inset-0 z-0">
+            <StarsBackground />
+          </div>
 
-          {/* Main Content - stars ke upar rahega */}
-          <div className="relative z-10">
+          {/* Extra Premium Glow Effects */}
+          <div
+            className="
+              fixed
+              top-[-200px]
+              left-[-200px]
+              w-[500px]
+              h-[500px]
+              bg-[#4EC6F1]/10
+              rounded-full
+              blur-[140px]
+              z-0
+            "
+          />
+
+          <div
+            className="
+              fixed
+              bottom-[-200px]
+              right-[-200px]
+              w-[500px]
+              h-[500px]
+              bg-[#6C63FF]/10
+              rounded-full
+              blur-[140px]
+              z-0
+            "
+          />
+
+          <div
+            className="
+              fixed
+              top-[40%]
+              left-[50%]
+              -translate-x-1/2
+              -translate-y-1/2
+              w-[700px]
+              h-[700px]
+              bg-gradient-to-r
+              from-[#4EC6F1]/5
+              via-[#6C63FF]/5
+              to-[#FF6FD8]/5
+              rounded-full
+              blur-[180px]
+              z-0
+            "
+          />
+
+          {/* Grid Overlay */}
+          <div
+            className="
+              fixed inset-0 z-0 opacity-[0.03]
+              bg-[linear-gradient(to_right,#ffffff_1px,transparent_1px),linear-gradient(to_bottom,#ffffff_1px,transparent_1px)]
+              bg-[size:80px_80px]
+            "
+          />
+
+          {/* Content */}
+          <main className="relative z-10">
             <Navbar />
             <Hero />
             <Skills />
@@ -44,7 +114,7 @@ const App = () => {
             <Experience />
             <Contact />
             <Footer />
-          </div>
+          </main>
         </div>
       )}
     </>

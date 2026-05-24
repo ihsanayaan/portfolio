@@ -1,27 +1,39 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-html, body {
+
+/* ================= GLOBAL ================= */
+
+html,
+body {
   overflow-x: hidden;
-}
-html {
+  background: #050816;
   scroll-behavior: smooth;
+  font-family: sans-serif;
+  color: white;
 }
+
+/* ================= PREMIUM GRADIENT ================= */
+
 @keyframes gradient {
   0% {
     background-position: 0% 50%;
   }
+
   50% {
     background-position: 100% 50%;
   }
+
   100% {
     background-position: 0% 50%;
   }
 }
 
 .animate-gradient {
-  animation: gradient 5s ease infinite;
+  animation: gradient 6s ease infinite;
 }
+
+/* ================= STARS BACKGROUND ================= */
 
 .stars-small,
 .stars-medium,
@@ -33,6 +45,7 @@ html {
   overflow: hidden;
 }
 
+/* Shared Animation */
 .stars-small::after,
 .stars-medium::after,
 .stars-big::after {
@@ -40,96 +53,83 @@ html {
   position: absolute;
   inset: -2000px;
   background-repeat: repeat;
-  animation: animateStars linear infinite;
+  animation:
+    animateStars linear infinite,
+    twinkle ease-in-out infinite alternate;
 }
 
-/* Base stars */
-.stars-small,
-.stars-medium,
-.stars-big {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  overflow: hidden;
-}
+/* ================= SMALL STARS ================= */
 
-.stars-small::after,
-.stars-medium::after,
-.stars-big::after {
-  content: "";
-  position: absolute;
-  inset: -2000px;
-  background-repeat: repeat;
-  animation: animateStars linear infinite, twinkle ease-in-out infinite alternate;
-}
-
-/* Small Stars - zyada dense + fast twinkle */
 .stars-small::after {
   background-image:
-    radial-gradient(1px 1px at 20px 30px, #fff, transparent),
-    radial-gradient(1px 1px at 120px 80px, #4EC6F1, transparent),
-    radial-gradient(2px 2px at 250px 150px, #fff, transparent),
-    radial-gradient(1px 1px at 400px 200px, #fff, transparent),
-    radial-gradient(2px 2px at 550px 350px, #4EC6F1, transparent),
-    radial-gradient(1px 1px at 700px 500px, #fff, transparent),
-    radial-gradient(2px 2px at 900px 650px, #fff, transparent),
-    radial-gradient(1px 1px at 50px 600px, #fff, transparent),
-    radial-gradient(1px 1px at 200px 750px, #4EC6F1, transparent),
-    radial-gradient(2px 2px at 350px 900px, #fff, transparent),
-    radial-gradient(1px 1px at 500px 50px, #fff, transparent),
-    radial-gradient(2px 2px at 650px 250px, #4EC6F1, transparent),
-    radial-gradient(1px 1px at 800px 450px, #fff, transparent),
-    radial-gradient(1px 1px at 950px 850px, #fff, transparent),
-    radial-gradient(2px 2px at 1100px 100px, #4EC6F1, transparent);
-  background-size: 1200px 1200px;
-  opacity: 0.85;
-  animation-duration: 100s, 2s;
+    radial-gradient(2px 2px at 25px 30px, #ffffff, transparent),
+    radial-gradient(2px 2px at 120px 80px, #4EC6F1, transparent),
+    radial-gradient(3px 3px at 250px 150px, #ffffff, transparent),
+    radial-gradient(2px 2px at 400px 200px, #ffffff, transparent),
+    radial-gradient(3px 3px at 550px 350px, #4EC6F1, transparent),
+    radial-gradient(2px 2px at 700px 500px, #ffffff, transparent),
+    radial-gradient(3px 3px at 900px 650px, #ffffff, transparent),
+    radial-gradient(2px 2px at 50px 600px, #ffffff, transparent),
+    radial-gradient(2px 2px at 200px 750px, #4EC6F1, transparent),
+    radial-gradient(3px 3px at 350px 900px, #ffffff, transparent),
+    radial-gradient(2px 2px at 500px 50px, #ffffff, transparent),
+    radial-gradient(3px 3px at 650px 250px, #6C63FF, transparent),
+    radial-gradient(2px 2px at 800px 450px, #ffffff, transparent),
+    radial-gradient(2px 2px at 950px 850px, #ffffff, transparent),
+    radial-gradient(3px 3px at 1100px 100px, #4EC6F1, transparent);
+
+  background-size: 1400px 1400px;
+
+  opacity: 0.95;
+
+  filter: drop-shadow(0 0 4px rgba(255,255,255,0.5));
+
+  animation-duration: 120s, 2s;
 }
 
-/* Medium Stars - medium twinkle */
+/* ================= MEDIUM STARS ================= */
+
 .stars-medium::after {
   background-image:
-    radial-gradient(2px 2px at 100px 100px, #fff, transparent),
-    radial-gradient(3px 3px at 300px 200px, #4EC6F1, transparent),
-    radial-gradient(2px 2px at 600px 400px, #fff, transparent),
-    radial-gradient(3px 3px at 900px 700px, #fff, transparent),
-    radial-gradient(2px 2px at 50px 500px, #fff, transparent),
-    radial-gradient(3px 3px at 400px 850px, #4EC6F1, transparent),
-    radial-gradient(2px 2px at 750px 150px, #fff, transparent),
-    radial-gradient(3px 3px at 1050px 600px, #fff, transparent),
-    radial-gradient(2px 2px at 1200px 300px, #4EC6F1, transparent);
-  background-size: 1400px 1400px;
-  opacity: 0.65;
-  animation-duration: 150s, 3s;
+    radial-gradient(4px 4px at 100px 100px, #ffffff, transparent),
+    radial-gradient(5px 5px at 300px 200px, #4EC6F1, transparent),
+    radial-gradient(4px 4px at 600px 400px, #ffffff, transparent),
+    radial-gradient(5px 5px at 900px 700px, #ffffff, transparent),
+    radial-gradient(4px 4px at 50px 500px, #ffffff, transparent),
+    radial-gradient(5px 5px at 400px 850px, #6C63FF, transparent),
+    radial-gradient(4px 4px at 750px 150px, #ffffff, transparent),
+    radial-gradient(5px 5px at 1050px 600px, #4EC6F1, transparent);
+
+  background-size: 1600px 1600px;
+
+  opacity: 0.75;
+
+  filter: drop-shadow(0 0 8px rgba(255,255,255,0.7));
+
+  animation-duration: 180s, 3s;
 }
 
-/* Big Stars - slow twinkle */
+/* ================= BIG GLOW STARS ================= */
+
 .stars-big::after {
   background-image:
-    radial-gradient(4px 4px at 200px 150px, #fff, transparent),
-    radial-gradient(3px 3px at 700px 500px, #4EC6F1, transparent),
-    radial-gradient(4px 4px at 1000px 800px, #fff, transparent),
-    radial-gradient(3px 3px at 300px 900px, #6C63FF, transparent),
-    radial-gradient(4px 4px at 850px 200px, #fff, transparent),
-    radial-gradient(3px 3px at 1150px 650px, #6C63FF, transparent);
-  background-size: 1600px 1600px;
-  opacity: 0.5;
-  animation-duration: 200s, 4s;
+    radial-gradient(7px 7px at 200px 150px, #ffffff, transparent),
+    radial-gradient(6px 6px at 700px 500px, #4EC6F1, transparent),
+    radial-gradient(7px 7px at 1000px 800px, #ffffff, transparent),
+    radial-gradient(6px 6px at 300px 900px, #6C63FF, transparent),
+    radial-gradient(7px 7px at 850px 200px, #ffffff, transparent),
+    radial-gradient(6px 6px at 1150px 650px, #22D3EE, transparent);
+
+  background-size: 1800px 1800px;
+
+  opacity: 0.65;
+
+  filter: drop-shadow(0 0 14px rgba(255,255,255,0.9));
+
+  animation-duration: 220s, 4s;
 }
 
-/* Moving stars down */
-@keyframes animateStars {
-  from { transform: translateY(0); }
-  to { transform: translateY(1000px); }
-}
-
-/* Twinkling effect */
-@keyframes twinkle {
- 0% { opacity: 0.3; }
- 50% { opacity: 1; }
- 100% { opacity: 0.3; }
-}
+/* ================= STAR MOVEMENT ================= */
 
 @keyframes animateStars {
   from {
@@ -140,9 +140,34 @@ html {
     transform: translateY(1000px);
   }
 }
-.marquee {
+
+/* ================= TWINKLE EFFECT ================= */
+
+@keyframes twinkle {
+  0% {
+    opacity: 0.35;
+  }
+
+  50% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0.35;
+  }
+}
+
+/* ================= CORE SKILLS MARQUEE ================= */
+
+.marquee-wrapper {
+  overflow: hidden;
+  width: 100%;
+}
+
+.marquee-track {
+  display: flex;
   width: max-content;
-  animation: marqueeMove 28s linear infinite;
+  animation: marqueeMove 18s linear infinite;
 }
 
 @keyframes marqueeMove {
@@ -154,11 +179,133 @@ html {
     transform: translateX(-50%);
   }
 }
-@keyframes marquee {
-  0% { transform: translateX(0); }
-  100% { transform: translateX(-50%); }
+
+/* ================= PREMIUM SCROLLBAR ================= */
+
+::-webkit-scrollbar {
+  width: 8px;
 }
 
-.animate-marquee {
-  animation: marquee 14s linear infinite;
+::-webkit-scrollbar-track {
+  background: #050816;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(
+    to bottom,
+    #4EC6F1,
+    #6C63FF
+  );
+
+  border-radius: 999px;
+}
+
+/* ================= TEXT SELECTION ================= */
+
+::selection {
+  background: rgba(78, 198, 241, 0.3);
+  color: white;
+}
+
+/* ================= SHOOTING STARS ================= */
+
+.shooting-star {
+  position: absolute;
+
+  top: -10%;
+  left: -20%;
+
+  width: 180px;
+  height: 2px;
+
+  background: linear-gradient(
+    90deg,
+    rgba(255,255,255,1),
+    rgba(255,255,255,0)
+  );
+
+  border-radius: 999px;
+
+  opacity: 0.7;
+
+  transform: rotate(25deg);
+
+  filter: drop-shadow(0 0 8px white);
+
+  animation: shooting 7s linear infinite;
+
+  pointer-events: none;
+}
+
+.delay-1 {
+  animation-delay: 2s;
+}
+
+.delay-2 {
+  animation-delay: 4s;
+}
+
+@keyframes shooting {
+  0% {
+    transform:
+      translateX(0)
+      translateY(0)
+      rotate(25deg);
+
+    opacity: 0;
+  }
+
+  10% {
+    opacity: 1;
+  }
+
+  100% {
+    transform:
+      translateX(1800px)
+      translateY(700px)
+      rotate(25deg);
+
+    opacity: 0;
+  }
+}
+
+/* ================= MOBILE SHOOTING STARS ================= */
+
+@media (max-width: 768px) {
+
+  .shooting-star {
+    width: 120px;
+    height: 1.5px;
+
+    opacity: 0.5;
+
+    filter: drop-shadow(0 0 5px white);
+
+    animation: shootingMobile 8s linear infinite;
+  }
+
+  @keyframes shootingMobile {
+
+    0% {
+      transform:
+        translateX(0)
+        translateY(0)
+        rotate(25deg);
+
+      opacity: 0;
+    }
+
+    10% {
+      opacity: 1;
+    }
+
+    100% {
+      transform:
+        translateX(700px)
+        translateY(350px)
+        rotate(25deg);
+
+      opacity: 0;
+    }
+  }
 }
