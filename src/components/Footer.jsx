@@ -83,7 +83,7 @@ const Footer = () => {
           <h3 className="text-lg font-bold text-white">About</h3>
 
           <p className="text-gray-400 text-sm leading-6">
-            Frontend Developer & UI/UX Designer building modern React experiences.
+           UI/UX Designer & Frontend Developer  building modern React experiences.
           </p>
 
           <div className="p-4 rounded-2xl bg-white/[0.03] border border-white/10 backdrop-blur-xl">

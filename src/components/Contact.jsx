@@ -65,7 +65,7 @@ const Contact = () => {
           <SectionHeading title="Get In Touch" />
 
           <p className="text-center text-gray-400 mt-5 max-w-2xl mx-auto text-sm md:text-base leading-7">
-            Let’s collaborate on React apps, UI/UX systems, and modern frontend experiences.
+            Let’s collaborate on UI/UX systems, React apps and modern frontend experiences.
           </p>
         </motion.div>
 
@@ -89,7 +89,7 @@ const Contact = () => {
               Let’s Work Together 
             </h3>
             <p className="text-gray-400 text-sm md:text-base leading-7">
-              Available for frontend development, UI/UX design, and freelance opportunities worldwide.
+              Available for UI/UX design, frontend development and freelance opportunities worldwide.
             </p>
 
             {/* CONTACT ITEMS */}

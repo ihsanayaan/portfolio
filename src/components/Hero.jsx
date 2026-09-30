@@ -208,10 +208,8 @@ const Hero = () => {
             >
               <Typewriter
                 words={[
+                   "UI/UX Designer",
                   "Frontend Developer",
-                  "UI/UX Designer",
-                  "React.js Specialist",
-                  "RTL/LTR Expert",
                 ]}
                 loop
                 cursor
@@ -255,7 +253,7 @@ const Hero = () => {
             >
               {/* Resume */}
               <motion.a
-                href="/Ihsan_Ali_Figma_Resume.pdf"
+                href="/Ihsan Ali ATS RESUME.pdf"
                 download
                 whileHover={{
                   y: -3,
@@ -463,7 +461,7 @@ const Hero = () => {
               </h3>
 
               <p className="text-gray-400 leading-relaxed text-sm md:text-base">
-                Frontend Developer & UI/UX Designer
+                UI/UX Designer & Frontend Developer
                 focused on creating modern scalable
                 UI systems using React.js, Tailwind CSS
                 and Figma.

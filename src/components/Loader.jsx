@@ -35,7 +35,7 @@ const Loader = () => {
         className="mt-3 text-[#4EC6F1]
         text-lg md:text-xl font-medium"
       >
-        Frontend Developer & UI/UX Designer
+       UI/UX Designer & Frontend Developer
       </motion.p>
 
       {/* Loading Text */}
@@ -62,7 +62,7 @@ const Loader = () => {
         }}
         className="mt-5 text-gray-400 text-sm tracking-[3px]"
       >
-        Loading Experience...
+        Loading...
       </motion.p>
     </motion.div>
   );

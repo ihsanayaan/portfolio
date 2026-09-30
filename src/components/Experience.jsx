@@ -85,7 +85,7 @@ const Experience = () => {
           <div className="w-28 h-1.5 bg-gradient-to-r from-[#4EC6F1] via-white to-[#6C63FF] mx-auto rounded-full" />
 
           <p className="text-gray-400 max-w-2xl mx-auto leading-8 text-sm md:text-base">
-            Frontend React Developer and UI/UX Designer specializing in
+           UI/UX Designer & Frontend React Developer specializing in
             modern React.js applications, scalable frontend architecture,
             bilingual RTL/LTR systems, and premium user experiences.
           </p>

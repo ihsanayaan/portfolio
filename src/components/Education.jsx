@@ -24,8 +24,6 @@ const educationData = [
     icon: (
       <FaGraduationCap className="text-[#4EC6F1] text-xl" />
     ),
-    description:
-      'Specialized in Web Development and UI/UX Design. Built production-ready React applications.',
 
     degreeCertificate: {
       file: '/certificates/bs-degree.pdf',
@@ -69,9 +67,6 @@ const educationData = [
       'Tailwind CSS',
       'UI/UX Design',
       'Figma',
-      'RTL/LTR',
-      'REST APIs',
-      'Git',
     ],
 
     featured: true,
@@ -150,8 +145,8 @@ const Education = () => {
         >
           <p className="text-gray-400 leading-8">
             Academic background combined with real-world
-            internship experience in React development,
-            UI/UX design, and scalable frontend systems.
+            internship experience in UI/UX design, React development
+            & scalable frontend systems.
           </p>
         </motion.div>
 
